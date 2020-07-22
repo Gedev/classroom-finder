@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/dashboard') }}">Welcome {{ Auth::user()->name }}</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -84,9 +84,14 @@
                     Classroom Finder
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Home</a>
-                </div>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ route('index') }}">Homepage</a>
+                    @else
+                        <a href="{{ route('home') }}">Login</a>
+                    @endauth
+                @endif
+
             </div>
         </div>
     </body>
