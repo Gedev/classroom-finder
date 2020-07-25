@@ -58,7 +58,7 @@
                                     <a class="dropdown-item" href="{{ route('dashboard') }}">
                                         Dashboard
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <a class="dropdown-item" href="{{ route('userAccount') }}">
                                         My account
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
