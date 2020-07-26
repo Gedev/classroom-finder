@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,7 +34,8 @@ class HomeController extends Controller
 
     public function homepage()
     {
-        return view('index');
+        $users = DB::table('users')->get();
+        return view('index', ['users'=>$users]);
     }
 
     public function userAccount()
