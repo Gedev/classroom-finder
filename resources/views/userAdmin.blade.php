@@ -22,14 +22,14 @@
                                 <td>Name</td>
                                 <td>Email</td>
                             </tr>
-                            @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
+                                    <td>{{ Auth::user()->id }}</td>
+                                    <td>{{ Auth::user()->name }}</td>
+                                    <td>{{ Auth::user()->email }}</td>
                                 </tr>
-                            @endforeach
+
                         </table>
+
                     </div>
                 </div>
             </div>
