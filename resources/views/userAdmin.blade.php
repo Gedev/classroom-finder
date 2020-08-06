@@ -13,23 +13,36 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
+                        <p>
                         {{ __('You are in the user account dashboard') }}
-
-                        <table border = "1">
+                        </p>
+                        <table>
                             <tr>
-                                <td>Id</td>
-                                <td>Name</td>
-                                <td>Email</td>
+                                <td>
+                                    <label for="basic-url">Votre nom est :</label>
+                                    <span class="input-group-text" id="basic-addon3">
+                                        {{ Auth::user()->name }}
+                                    </span>
+                                </td>
+
                             </tr>
-                                <tr>
-                                    <td>{{ Auth::user()->id }}</td>
-                                    <td>{{ Auth::user()->name }}</td>
-                                    <td>{{ Auth::user()->email }}</td>
-                                </tr>
-
+                            <tr>
+                                <td>
+                                    <label for="basic-url">Votre email est :</label>
+                                    <span class="input-group-text" id="basic-addon3">
+                                                {{ Auth::user()->email }}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="basic-url">Votre role est :</label>
+                                    <span class="input-group-text" id="basic-addon3">
+                                                {{ Auth::user()->role }}
+                                    </span>
+                                </td>
+                            </tr>
                         </table>
-
                     </div>
                 </div>
             </div>
