@@ -10928,3 +10928,7 @@ a.text-dark:focus {
   }
 }
 
+.role_icons {
+    width: 25px !important;
+}
+

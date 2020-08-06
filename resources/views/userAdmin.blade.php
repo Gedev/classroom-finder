@@ -30,16 +30,22 @@
                                 <td>
                                     <label for="basic-url">Votre email est :</label>
                                     <span class="input-group-text" id="basic-addon3">
-                                                {{ Auth::user()->email }}
+                                        {{ Auth::user()->email }}
                                     </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="basic-url">Votre role est :</label>
-                                    <span class="input-group-text" id="basic-addon3">
-                                                {{ Auth::user()->role }}
-                                    </span>
+                                        @if (Auth::user()->role)
+                                        <span class="input-group-text" id="basic-addon3">
+                                            <img src="/img/043-teacher-1.png" class="role_icons" alt="img_teacher">{{ ucfirst(Auth::user()->role) }}
+                                        </span>
+                                        @else
+                                        <span class="input-group-text text-danger" id="basic-addon3">
+                                            <i>NO ROLE ASSIGNED</i>
+                                        </span>
+                                        @endif
                                 </td>
                             </tr>
                         </table>
