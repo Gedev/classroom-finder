@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
         $users = DB::table('users')->get();
         $user = auth()->user();
-        return view('useradmin', ['users'=>$users]);
+        return view('userAccount', ['users'=>$users]);
     }
 
     public function adminPanel()

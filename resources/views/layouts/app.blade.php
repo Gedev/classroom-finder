@@ -56,9 +56,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('adminPanel') }}">
-                                        Admin panel
-                                    </a>
+                                    @if (Auth::user()->role=='professor' || Auth::user()->role=='director')
+                                        <a class="dropdown-item" href="{{ route('adminPanel') }}">
+                                            Admin panel
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('userAccount') }}">
                                         My account
                                     </a>
