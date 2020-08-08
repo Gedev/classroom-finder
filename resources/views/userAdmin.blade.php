@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">{{ __('My account') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -13,9 +13,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <p>
-                        {{ __('You are in the user account dashboard') }}
-                        </p>
                         <table>
                             <tr>
                                 <td>
@@ -37,15 +34,22 @@
                             <tr>
                                 <td>
                                     <label for="basic-url">Votre role est :</label>
-                                        @if (Auth::user()->role)
-                                        <span class="input-group-text" id="basic-addon3">
-                                            <img src="/img/043-teacher-1.png" class="role_icons" alt="img_teacher">{{ ucfirst(Auth::user()->role) }}
-                                        </span>
-                                        @else
-                                        <span class="input-group-text text-danger" id="basic-addon3">
-                                            <i>NO ROLE ASSIGNED</i>
-                                        </span>
+
+                                    <span class="input-group-text" id="basic-addon3">
+                                        {{-- CHECK ROLE FOR ICON --}}
+                                        @if (Auth::user()->role=='professor')
+                                            <img src="/img/043-teacher-1.png" class="role_icons" alt="img_teacher">
                                         @endif
+
+                                        {{-- CHECK ROLE --}}
+                                        @if (Auth::user()->role)
+                                                {{ ucfirst(Auth::user()->role) }}
+                                        @else
+                                            <span class="text-danger" id="basic-addon3">
+                                                <i>NO ROLE ASSIGNED</i>
+                                            </span>
+                                            @endif
+                                    </span>
                                 </td>
                             </tr>
                         </table>
