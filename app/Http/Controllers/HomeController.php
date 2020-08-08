@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
     public function homepage()
@@ -44,5 +44,10 @@ class HomeController extends Controller
         $users = DB::table('users')->get();
         $user = auth()->user();
         return view('useradmin', ['users'=>$users]);
+    }
+
+    public function adminPanel()
+    {
+        return view('adminPanel');
     }
 }
