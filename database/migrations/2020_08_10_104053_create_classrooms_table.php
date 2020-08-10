@@ -16,7 +16,7 @@ class CreateClassroomsTable extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->tinyInteger('floor');
+            $table->Integer('floor');
             $table->tinyInteger('nb_of_seats');
             $table->boolean('has_whiteboard');
             $table->boolean('has_projector');
