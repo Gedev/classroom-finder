@@ -20,4 +20,16 @@ class UserController extends Controller
             echo $user->name;
         }
     }
+
+    public function addUser($name, $password, $email)
+    {
+        DB::table('users')->insert([
+            [
+                'email' => $email,
+                'name' => $name,
+                'password' => bcrypt($password)
+            ]
+        ]);
+    }
+
 }
