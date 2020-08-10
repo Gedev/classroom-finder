@@ -50,4 +50,10 @@ class HomeController extends Controller
     {
         return view('adminPanel');
     }
+
+    public function attendanceRecord()
+    {
+        $classrooms = DB::table('classrooms')->get();
+        return view('attendanceRecord', ['classrooms'=>$classrooms]);
+    }
 }

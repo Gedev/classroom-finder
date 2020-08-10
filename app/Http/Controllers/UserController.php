@@ -21,7 +21,7 @@ class UserController extends Controller
         }
     }
 
-    public function addUser($name, $password, $email)
+    public function addUser($name, $password)
     {
         DB::table('users')->insert([
             [
