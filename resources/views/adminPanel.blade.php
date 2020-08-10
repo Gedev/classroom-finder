@@ -16,6 +16,58 @@
 
                     {{ __('You are logged in!') }}
                     <a href="{{ route('index') }}">Homepage</a>
+
+                    <h4>Users</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        @foreach ($users as $user)
+                            <tr>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+
+                    <h4>Classrooms</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Floor</th>
+                                <th scope="col">Number of seats</th>
+                                <th scope="col">Has whiteboard</th>
+                                <th scope="col">Has projector</th>
+                            </tr>
+                        </thead>
+                        @foreach ($classrooms as $classroom)
+                            <tr>
+                                <td>{{ $classroom->id }}</td>
+                                <td>Étage {{ $classroom->floor }}</td>
+                                <td>{{ $classroom->nb_of_seats }}</td>
+                                <td>
+                                    @if ($classroom->has_whiteboard)
+                                        Yes
+                                    @else
+                                        No
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($classroom->has_projector)
+                                        Yes
+                                    @else
+                                        No
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>
