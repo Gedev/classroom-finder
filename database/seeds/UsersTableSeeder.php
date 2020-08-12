@@ -17,21 +17,25 @@ class UsersTableSeeder extends Seeder
                 'name' => 'John Doe',
                 'email' => 'john@example.com',
                 'password' => bcrypt('john_classfi'),
+                'role' => '',
             ],
             [
                 'name' => 'Étudiant',
                 'email' => 'student@example.com',
                 'password' => bcrypt('student_classfi'),
+                'role' => 'student',
             ],
             [
                 'name' => 'Professeur',
                 'email' => 'professeur@example.com',
                 'password' => bcrypt('prof_classfi'),
+                'role' => 'professor',
             ],
             [
                 'name' => 'Directeur',
                 'email' => 'directeur@example.com',
                 'password' => bcrypt('directeur_classfi'),
+                'role' => 'director',
             ]
         ]);
     }
