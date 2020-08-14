@@ -41,6 +41,7 @@
         <label for="message">Please use your id card with the card to register your presence.</label>
         <input class="form-control" placeholder="Enter some text" id="message" type="password" />
         <p id="result"></p>
+
     </div>
 </div>
 
