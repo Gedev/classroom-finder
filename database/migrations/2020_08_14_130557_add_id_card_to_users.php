@@ -14,7 +14,7 @@ class AddIdCardToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('idCard')->nullable();
+            $table->string('idCard')->nullable();
         });
     }
 
