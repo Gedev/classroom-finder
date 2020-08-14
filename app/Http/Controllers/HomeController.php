@@ -53,7 +53,8 @@ class HomeController extends Controller
 
     public function attendanceRecord()
     {
+        $users = DB::table('users')->get();
         $classrooms = DB::table('classrooms')->get();
-        return view('attendanceRecord', ['classrooms'=>$classrooms]);
+        return view('attendanceRecord', ['users'=>$users], ['classrooms'=>$classrooms]);
     }
 }
