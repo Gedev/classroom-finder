@@ -88,7 +88,6 @@
             @yield('content')
         </main>
     </div>
-
     @yield('realTimeFormValidation')
 
     @yield('scripts')

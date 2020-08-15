@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+@section('breadrumb')
+
+@endsection
+
 @section('content')
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">admin panel</li>
+    </ol>
+</nav>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
