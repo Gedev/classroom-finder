@@ -27,13 +27,12 @@
         </tr>
         </thead>
         @foreach ($users as $user)
-            <tr>
+            <tr class="{{ $user->name }}" id="attendanceRow">
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->idCard }}</td>
             </tr>
-
         @endforeach
     </table>
 
@@ -41,7 +40,6 @@
         <label for="message">Please use your id card with the card to register your presence.</label>
         <input class="form-control" placeholder="Enter some text" id="message" type="password" autocomplete="off" />
         <p id="result"></p>
-
     </div>
 </div>
 
