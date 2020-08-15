@@ -27,6 +27,11 @@ class CourseSeeder extends Seeder
                 'id' => 3,
                 'name' => 'web_dynamique',
                 'id_classroom' => 103,
+            ],
+            [
+                'id' => 4,
+                'name' => 'framework_poo',
+                'id_classroom' => 103,
             ]
         ]);
     }
