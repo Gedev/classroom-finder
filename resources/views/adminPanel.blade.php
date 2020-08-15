@@ -23,10 +23,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
-                    <a href="{{ route('index') }}">Homepage</a>
-
                     <h4>Users</h4>
                     <table class="table">
                         <thead>
@@ -44,10 +40,13 @@
                             </tr>
                         @endforeach
                     </table>
-
-                    <h4>Classrooms</h4>
-                    <table class="table">
-                        <thead>
+                </div>
+            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Classrooms</h4>
+                        <table class="table">
+                            <thead>
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Floor</th>
@@ -55,29 +54,30 @@
                                 <th scope="col">Has whiteboard</th>
                                 <th scope="col">Has projector</th>
                             </tr>
-                        </thead>
-                        @foreach ($classrooms as $classroom)
-                            <tr>
-                                <td>{{ $classroom->id }}</td>
-                                <td>Étage {{ $classroom->floor }}</td>
-                                <td>{{ $classroom->nb_of_seats }}</td>
-                                <td>
-                                    @if ($classroom->has_whiteboard)
-                                        Yes
-                                    @else
-                                        No
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($classroom->has_projector)
-                                        Yes
-                                    @else
-                                        No
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
+                            </thead>
+                            @foreach ($classrooms as $classroom)
+                                <tr>
+                                    <td>{{ $classroom->id }}</td>
+                                    <td>Étage {{ $classroom->floor }}</td>
+                                    <td>{{ $classroom->nb_of_seats }}</td>
+                                    <td>
+                                        @if ($classroom->has_whiteboard)
+                                            Yes
+                                        @else
+                                            No
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($classroom->has_projector)
+                                            Yes
+                                        @else
+                                            No
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
