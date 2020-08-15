@@ -18,6 +18,7 @@ class CreateCoursesSchedulesTable extends Migration
             $table->timestamps();
             $table->string('id_classroom');
             $table->string('section');
+            $table->string('course_name');
             $table->time('start_at');
             $table->time('end_at');
             $table->string('day');
