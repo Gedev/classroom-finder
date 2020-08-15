@@ -7,7 +7,12 @@
                 <h4>
                 Homepage
                 </h4>
-                
+                @php
+                    $mytime = Carbon\Carbon::now();
+                    $mytime->setTimezone('GMT+2');
+                    echo $mytime->locale('fr')->isoFormat('dddd, Do MMMM YYYY, HH:mm');
+                @endphp
+
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -23,7 +28,7 @@
                     </thead>
                     @for($i = 0; $i < 10; $i++)
                         <tr>
-                            <td>{{ $i+8 }}h-{{ $i+9 }}h</td>
+                            <th>{{ $i+8 }}h-{{ $i+9 }}h</th>
                             @for($j = 0; $j < 7; $j++)
                                 @if($i == 4)
                                     <td class="table-dark"></td>
