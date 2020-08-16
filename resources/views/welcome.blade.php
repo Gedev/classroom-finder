@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #00916e;
+                color: #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -61,6 +61,26 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .link-bg a:link, a:visited {
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                transition: all 0.4s ease-out;
+                box-shadow: inset 0 0 0 0 #31302B;
+            }
+
+            a:hover, a:active {
+                border: 1px solid #00916e;
+                background-color: #fff;
+                color: #00916e;
+                font-weight: bold;
+                box-shadow: inset 100px 0 0 0 #e0e0e0;
+            }
+
         </style>
     </head>
     <body>
@@ -84,13 +104,15 @@
                     Classroom Finder
                 </div>
 
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ route('index') }}">Homepage</a>
-                    @else
-                        <a href="{{ route('home') }}">Login</a>
-                    @endauth
-                @endif
+                <div class="link-bg">
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ route('index') }}">Homepage</a>
+                        @else
+                            <a href="{{ route('home') }}">Login</a>
+                        @endauth
+                    @endif
+                </div>
 
             </div>
         </div>
