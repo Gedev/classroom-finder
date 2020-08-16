@@ -2,11 +2,14 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="bodyContent row justify-content-center">
             <div class="col-md-8">
-                <h4>
-                Homepage
-                </h4>
+                <p>
+                <div class="alert-light">
+                    <div class="first-letter-title">H</div>
+                    <div class="title">omepage</div>
+                </div>
+                </p>
                 @php
                     $mytime = Carbon\Carbon::now();
                     $mytime->setTimezone('GMT+2');

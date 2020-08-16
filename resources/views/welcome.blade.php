@@ -63,18 +63,18 @@
             }
 
             .link-bg a:link, a:visited {
-                border: 1px solid #ffffff;
+                border: 2px solid #ffffff;
                 color: #ffffff;
                 padding: 14px 25px;
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
-                transition: all 0.4s ease-out;
+                transition: all 0.2s ease-out;
                 box-shadow: inset 0 0 0 0 #31302B;
             }
 
             a:hover, a:active {
-                border: 1px solid #00916e;
+                border: 2px solid #00916e;
                 background-color: #fff;
                 color: #00916e;
                 font-weight: bold;
