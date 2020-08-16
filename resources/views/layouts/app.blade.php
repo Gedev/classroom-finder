@@ -40,6 +40,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        @if(Auth::user()->role=='professor' || Auth::user()->role=='director')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('attendanceRecord') }}">{{ __('Attendance') }}</a>
+                            </li>
+                        @endif
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

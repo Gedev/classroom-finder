@@ -62,14 +62,14 @@
                                     <td>{{ $classroom->nb_of_seats }}</td>
                                     <td>
                                         @if ($classroom->has_whiteboard)
-                                            Yes
+                                            <div class="text-success">Yes</div>
                                         @else
                                             No
                                         @endif
                                     </td>
                                     <td>
                                         @if ($classroom->has_projector)
-                                            Yes
+                                            <div class="text-success">Yes</div>
                                         @else
                                             No
                                         @endif

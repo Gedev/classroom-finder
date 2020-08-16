@@ -4,7 +4,7 @@
 @endsection
 
 @section('realTimeFormValidation')
-<div class="col-md-4">
+<div class="col-md-4 bodyContent">
     <form>
         <div class="form-group">
             <label for="inputGroupSelect01">Select your class</label>

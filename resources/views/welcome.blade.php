@@ -74,9 +74,10 @@
             }
 
             a:hover, a:active {
-                border: 2px solid #00916e;
+                border: 2px solid #ff7802;
+                /*#00916e*/
                 background-color: #fff;
-                color: #00916e;
+                color: #ff7802;
                 font-weight: bold;
                 box-shadow: inset 100px 0 0 0 #e0e0e0;
             }
