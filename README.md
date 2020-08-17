@@ -16,5 +16,7 @@
 
 6. Use 'php artisan migrate' to fill the database.
     It will create fake users too.
+
+7. Use the command 'composer dump-autoload', then use 'php artisan db:seed' to fill the database with data
     
-7. Use 'php artisan serve' to launch the localhost
+8. Use 'php artisan serve' to launch the localhost
