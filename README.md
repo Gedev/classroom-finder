@@ -15,8 +15,9 @@
 5. Use php artisan key:generate.
 
 6. Use 'php artisan migrate' to fill the database.
-    It will create fake users too.
+    -> If you get error with "... could not find driver", you will need to uncomment ';extension=pdo_mysql.so' from the php.ini file in your php installation folder.
 
-7. Use the command 'composer dump-autoload', then use 'php artisan db:seed' to fill the database with data
+7. Use the command 'composer dump-autoload', then use 
+    'php artisan migrate' follow by 'php artisan db:seed' to fill the database with data.
     
 8. Use 'php artisan serve' to launch the localhost
