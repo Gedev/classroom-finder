@@ -35,6 +35,9 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
+                                @if($user->role == 'director')
+                                    <a href="createStudent.blade.php">Add a student</a>
+                                @endif
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                             </tr>

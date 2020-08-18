@@ -18,7 +18,7 @@ class CoursesSchedulesSeeder extends Seeder
                 'id_classroom' => '100',
                 'section' => 'webdev',
                 'course_name' => 'english',
-                'start_at' => '9',
+                'start_at' => '9.00.00',
                 'end_at' => '12',
                 'day' => 'monday'
             ]
