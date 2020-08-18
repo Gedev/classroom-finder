@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Symfony\Component\Console\Input\Input;
 
 class UserController extends Controller
 {
@@ -29,13 +32,15 @@ class UserController extends Controller
      */
     public function create($email, $name, $password)
     {
-        DB::table('users')->insert([
-            [
-                'email' => $email,
-                'name' => $name,
-                'password' => bcrypt($password)
-            ]
-        ]);
+//        $user = new User;
+//
+//        $user->username = Input::get('username');
+//        $user->email = Input::get('email');
+//        $user->password = Hash::make(Input::get('password'));
+//        $user->save();
+//
+//        DB::table('users')->insert([
+//        ];
     }
 
     /**
