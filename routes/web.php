@@ -31,3 +31,11 @@ Route::get('/adminPanel', 'ClassroomsController@index')
 Route::get('/attendance', 'HomeController@attendanceRecord')
     ->name('attendanceRecord')
     ->middleware('roleVerification');
+
+Route::get('/attendance', 'HomeController@attendanceRecord')
+    ->name('attendanceRecord')
+    ->middleware('roleVerification');
+
+Route::get('/addStudent', 'UserController@index')
+    ->name('addStudent')
+    ->middleware('roleVerification');
