@@ -20,9 +20,6 @@ class ClassroomsController extends Controller
      */
     public function index()
     {
-        $classrooms = DB::table('classrooms')->get();
-        $users = DB::table('users')->get();
-
         return view('classrooms.index',
             ['classrooms' => Classroom::all()],
             ['users' => User::all()]
