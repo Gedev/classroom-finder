@@ -15,75 +15,54 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+                <div class="card-header">{{ __('Overview') }}</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h4>Users</h4>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                            </tr>
-                        </thead>
-                        @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                @if($user->role == 'director')
-                                    <a class="btn btn-primary" href="{{ route('users.index') }}"> (o) See student's list</a>
-                                    <a class="btn btn-success" href="{{ route('users.create') }}"> (+) Add a student</a>
-                                @endif
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
+                    <h4>Students</h4>
+                        <a class="btn btn-success" href="{{ Route('users.index') }}">List of students</a>
                 </div>
             </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4>Classrooms</h4>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Floor</th>
-                                <th scope="col">Number of seats</th>
-                                <th scope="col">Has whiteboard</th>
-                                <th scope="col">Has projector</th>
-                            </tr>
-                            </thead>
-                            @foreach ($classrooms as $classroom)
-                                <tr>
-                                    <td>{{ $classroom->id }}</td>
-                                    <td>Étage {{ $classroom->floor }}</td>
-                                    <td>{{ $classroom->nb_of_seats }}</td>
-                                    <td>
-                                        @if ($classroom->has_whiteboard)
-                                            <div class="text-success">Yes</div>
-                                        @else
-                                            No
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ($classroom->has_projector)
-                                            <div class="text-success">Yes</div>
-                                        @else
-                                            No
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    </div>
+
+            <div class="card">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <h4>Classrooms</h4>
+                    <a class="btn btn-success" href="">List of Classrooms</a>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <h4>Courses</h4>
+                    <a class="btn btn-success" href="">List of courses</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <h4>Sections</h4>
+                    <a class="btn btn-success" href="">List of sections</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

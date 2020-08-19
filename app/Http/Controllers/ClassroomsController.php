@@ -15,6 +15,9 @@ class ClassroomsController extends Controller
     {
         $classrooms = DB::table('classrooms')->get();
         $users = DB::table('users')->get();
+        $courses = DB::table('schedules')->get();
+        $schedules = DB::table('schedules')->get();
+
         return view('adminPanel', ['users'=>$users], ['classrooms' => $classrooms]);
     }
 }
