@@ -1,6 +1,7 @@
 .bodyContent{
     background-color: white;
     box-shadow: 7px 7px 5px #343a4040 !important;
+    padding: 2%;
 }
 
 img .role_icons {
