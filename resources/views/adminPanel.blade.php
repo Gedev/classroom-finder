@@ -35,7 +35,7 @@
                         </div>
                     @endif
                     <h4>Classrooms</h4>
-                    <a class="btn btn-success" href="">List of Classrooms</a>
+                    <a class="btn btn-success" href="{{ Route('classrooms.index') }}">List of Classrooms</a>
                 </div>
             </div>
 

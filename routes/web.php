@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'HomeController@homepage')->name('index');
 Route::get('/userAccount', 'HomeController@userAccount')->name('userAccount');
 
-Route::get('/adminPanel', 'ClassroomsController@index')
+Route::get('/adminPanel', 'HomeController@adminPanel')
     ->name('adminPanel')
     ->middleware('roleVerification');
 
@@ -34,5 +34,6 @@ Route::get('/attendance', 'HomeController@attendanceRecord')
     ->middleware('roleVerification');
 
 Route::resource('users', 'UserController');
+Route::resource('classrooms', 'ClassroomsController');
 
 
