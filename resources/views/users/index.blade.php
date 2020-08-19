@@ -23,7 +23,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
                     <h4>Users</h4>
+                    @if(Auth::user()->role == 'director')
+                        <a href="{{ route('users.create') }}" class="btn btn-success">(+) Add a student</a>
+                    @endif
                     <table class="table">
                         <thead>
                         <tr>
@@ -35,11 +39,9 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                @if($user->role == 'director')
-                                    <a href="{{ route('users.create') }}" class="btn btn-success">(+) Add a student</a>
-                                @endif
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
                             </tr>
                         @endforeach
                     </table>

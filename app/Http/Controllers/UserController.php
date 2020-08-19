@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
@@ -59,7 +61,7 @@ class UserController extends Controller
             'email' => $request->get('email'),
             'role' => $request->get('role'),
             'idCard' => $request->get('idCard'),
-            'password' => $request->get('password'),
+            'password' => Hash::make($request->get('password'))
         ]);
 
         $user->save();
@@ -87,7 +89,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user=User::find($id);
-        return view('users.edit', compact('users'));
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -95,11 +97,27 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'role'=>'required',
+            'password'=>'required',
+        ]);
+
+        $user = User::find($id);
+
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->role = $request->get('role');
+        $user->idCard = $request->get('idCard');
+        $user->password = Hash::make($request->get('password'));
+        $user->save();
+
+        return redirect('/users')->with('success', 'Stock has been updated');
     }
 
     /**
