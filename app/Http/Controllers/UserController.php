@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 use Symfony\Component\Console\Input\Input;
 
 class UserController extends Controller
@@ -13,13 +17,13 @@ class UserController extends Controller
     /**
      * Show a list of all of the application's users.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function index()
     {
-        $users = DB::table('users')->get();
-
-        return view('createStudent', ['users'=>$users]);
+        return view('users.index', [
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -28,37 +32,44 @@ class UserController extends Controller
      * @param $email
      * @param $name
      * @param $password
-     * @return void
+     * @return Application|Factory|View
      */
-    public function create($email, $name, $password)
+    public function create()
     {
-//        $user = new User;
-//
-//        $user->username = Input::get('username');
-//        $user->email = Input::get('email');
-//        $user->password = Hash::make(Input::get('password'));
-//        $user->save();
-//
-//        DB::table('users')->insert([
-//        ];
+        return view('users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username'=>'required',
+            'email'=>'required',
+            'role'=>'required',
+            'password'=>'required',
+        ]);
+
+        $user = new User([
+            'username' => $request->get('username'),
+            'email' => $request->get('email'),
+            'role' => $request->get('role'),
+            'idCard' => $request->get('idCard'),
+            'password' => $request->get('password')->Hash::make('password'),
+        ]);
+        $user->save();
+
+        return redirect('/addStudent')->with('success', 'Student saved!');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -69,7 +80,7 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
@@ -81,7 +92,7 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -92,7 +103,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {

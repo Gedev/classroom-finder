@@ -36,7 +36,7 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 @if($user->role == 'director')
-                                    <a href="{{ route('addStudent') }}">Add a student</a>
+                                    <a href="{{ route('users.index') }}">Add a student</a>
                                 @endif
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>

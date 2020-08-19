@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +33,6 @@ Route::get('/attendance', 'HomeController@attendanceRecord')
     ->name('attendanceRecord')
     ->middleware('roleVerification');
 
-Route::get('/attendance', 'HomeController@attendanceRecord')
-    ->name('attendanceRecord')
-    ->middleware('roleVerification');
+Route::resource('users', 'UserController');
 
-Route::get('/addStudent', 'UserController@index')
-    ->name('addStudent')
-    ->middleware('roleVerification');
+
