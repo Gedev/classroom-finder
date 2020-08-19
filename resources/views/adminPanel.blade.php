@@ -36,7 +36,8 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 @if($user->role == 'director')
-                                    <a href="{{ route('users.index') }}">Add a student</a>
+                                    <a class="btn btn-primary" href="{{ route('users.index') }}"> (o) See student's list</a>
+                                    <a class="btn btn-success" href="{{ route('users.create') }}"> (+) Add a student</a>
                                 @endif
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>

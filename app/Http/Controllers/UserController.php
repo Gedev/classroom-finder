@@ -46,23 +46,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
-            'username'=>'required',
+            'name'=>'required',
             'email'=>'required',
             'role'=>'required',
             'password'=>'required',
         ]);
 
         $user = new User([
-            'username' => $request->get('username'),
+            'name' => $request->get('name'),
             'email' => $request->get('email'),
             'role' => $request->get('role'),
             'idCard' => $request->get('idCard'),
-            'password' => $request->get('password')->Hash::make('password'),
+            'password' => $request->get('password'),
         ]);
+
         $user->save();
 
-        return redirect('/addStudent')->with('success', 'Student saved!');
+        return redirect('users')->with('success', 'Student saved!');
     }
 
     /**
