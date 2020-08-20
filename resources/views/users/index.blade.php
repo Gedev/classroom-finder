@@ -20,7 +20,7 @@
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session()->get('success') }}
                         </div>
                     @endif
 
@@ -42,6 +42,13 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
+                                <td>
+                                    <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
