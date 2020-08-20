@@ -27,6 +27,7 @@
                     <h4>Users</h4>
                     @if(Auth::user()->role == 'director')
                         <a href="{{ route('users.create') }}" class="btn btn-success">(+) Add a student</a>
+
                     @endif
                     <table class="table">
                         <thead>
@@ -36,22 +37,43 @@
                             <th scope="col">Email</th>
                         </tr>
                         </thead>
+
+                        @php $toEnd = count($users) ;
+                            echo $_COOKIE["newUserData"];
+                        @endphp
                         @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
-                                <td>
-                                    <form action="{{ route('users.destroy', $user->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                            @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)
+                                <tr class="justCreated">
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
+                                    <td>
+                                        <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td><a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
+                                    <td>
+                                        <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </table>
+                    <button class="btn btn-danger" type="submit" onclick="ReadCookie()">Check cookie</button>
                 </div>
             </div>
         </div>

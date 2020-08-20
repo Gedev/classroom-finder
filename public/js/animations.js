@@ -6,10 +6,13 @@ function WriteCookie() {
 }
 
 function ReadCookie() {
-    let cookieValue = document.cookie
+    const cookieValue = document.cookie
         .split('; ')
         .find(row => row.startsWith('newUserData'))
         .split('=')[1];
     alert(cookieValue);
+    console.log(document.cookie);
+    console.log(cookieValue);
+    return cookieValue;
 }
 
