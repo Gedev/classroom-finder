@@ -4,7 +4,7 @@
     <div class=" row justify-content-center">
         <div class="col-md-8 bodyContent">
             <div class="col-md-6">
-                <form method="post" action="{{ route('users.store') }}" >
+                <form method="post" action="{{ route('users.store') }}" name="createUserForm">
                     {{ csrf_field() }}
                     <h4>Create a user</h4>
                     <div class="form-group">
@@ -36,7 +36,7 @@
                         <input type="password" name="password" id="password" class="form-control"/>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" onclick = "WriteCookie()">Submit</button>
                 </form>
             </div>
         </div>
