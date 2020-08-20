@@ -20,6 +20,20 @@ message.addEventListener('input', function () {
     }
 });
 
+
+function deleteData(id)
+    {
+        var id = id;
+        var url = '{{ route("users.destroy", ":id") }}';
+        url = url.replace(':id', id);
+        $("#deleteUserForm").attr('action', url);
+    }
+
+function confirmDeleteUser() {
+    console.log("ConfirmDeleteUser ??")
+    document.getElementById("deleteUserForm").submit();
+}
+
 // $.ajaxSetup({
 //     headers: {
 //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
