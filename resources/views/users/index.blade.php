@@ -26,7 +26,7 @@
 
                     <h4>Users</h4>
                     @if(Auth::user()->role == 'director')
-                        <a href="{{ route('users.create') }}" class="btn btn-success">(+) Add a student</a>
+                        <a href="{{ route('users.create') }}" class="btn btn-success">(+) Add a user</a>
 
                     @endif
                     <table class="table">
@@ -39,7 +39,6 @@
                         </thead>
 
                         @php $toEnd = count($users) ;
-                            echo $_COOKIE["newUserData"];
                         @endphp
                         @foreach ($users as $user)
                             @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)
@@ -67,9 +66,35 @@
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger" type="submit">Delete</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmDeleteModal">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <form action="{{ route('users.destroy', $user->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">Confirm Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endif
                         @endforeach
                     </table>

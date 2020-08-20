@@ -35,10 +35,10 @@
                         <label for="password">Choose a password*</label>
                         <input type="password" name="password" id="password" class="form-control"/>
                     </div>
-
                     <button type="submit" class="btn btn-primary" onclick="WriteCookie()">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 @endsection
+
