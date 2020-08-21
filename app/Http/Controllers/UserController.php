@@ -23,14 +23,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->sortBy('name');
+        $users = User::all()->sortBy('email');
 
         return view('users.index', [
             'users' => $users
         ]);
-//        return view('users.index', [
-//            'users' => User::all()
-//        ]);
+        //        return view('users.index', [
+        //            'users' => User::all()
+        //        ]);
     }
 
     /**
@@ -49,16 +49,16 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      */
     public function store(Request $request)
     {
 
         $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'role'=>'required',
-            'password'=>'required',
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+            'password' => 'required',
         ]);
 
         $user = new User([
@@ -77,7 +77,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -88,29 +88,29 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Application|Factory|Response|View
      */
     public function edit($id)
     {
-        $user=User::find($id);
+        $user = User::find($id);
         return view('users.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return Application|RedirectResponse|Response|Redirector
      */
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'role'=>'required',
-            'password'=>'required',
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+            'password' => 'required',
         ]);
 
         $user = User::find($id);
@@ -128,7 +128,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Application|RedirectResponse|Response|Redirector
      */
     public function destroy($id)
@@ -139,11 +139,23 @@ class UserController extends Controller
         return redirect('/users')->with('success', 'The user {{ $user }} has been deleted Successfully');
     }
 
-    public function sortByName(){
+    public function sortByName()
+    {
         $users = User::all();
         $users->sortBy('name');
         return view('users.index', [
             'users' => $users
         ]);
     }
+
+    public function sortByEmail()
+    {
+        $users = User::all()->sortBy('email');
+
+        return view('users.index', [
+            'users' => $users
+        ]);
+    }
 }
+
+

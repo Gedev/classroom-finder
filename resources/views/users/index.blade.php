@@ -43,7 +43,6 @@
                         @foreach ($users as $user)
                             @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)
                                 <tr class="justCreated">
-                                var_dump($user);
                             @else
                                 <tr>
                             @endif
