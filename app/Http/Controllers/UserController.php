@@ -23,9 +23,14 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all()->sortBy('name');
+
         return view('users.index', [
-            'users' => User::all()
+            'users' => $users
         ]);
+//        return view('users.index', [
+//            'users' => User::all()
+//        ]);
     }
 
     /**
@@ -132,5 +137,13 @@ class UserController extends Controller
         $user->delete();
 
         return redirect('/users')->with('success', 'The user {{ $user }} has been deleted Successfully');
+    }
+
+    public function sortByName(){
+        $users = User::all();
+        $users->sortBy('name');
+        return view('users.index', [
+            'users' => $users
+        ]);
     }
 }
