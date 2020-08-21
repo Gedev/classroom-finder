@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     <h4>Students</h4>
-                        <a class="btn btn-primary" href="{{ Route('users.index') }}">List of students</a>
+                        <a class="btn btn-primary" href="{{ Route('users.index') }}">List of users</a>
                 </div>
             </div>
 
