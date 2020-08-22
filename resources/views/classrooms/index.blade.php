@@ -21,7 +21,7 @@
                 @endif
                 <h4>Classrooms</h4>
                     @if(Auth::user()->role == 'director')
-                        <a href="{{ route('classrooms.create') }}" class="btn btn-success">(+) Add a student</a>
+                        <a href="{{ route('classrooms.create') }}" class="btn btn-success">(+) Add a classroom</a>
                     @endif
                 <table class="table">
                     <thead>
