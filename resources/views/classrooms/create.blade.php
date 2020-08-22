@@ -24,7 +24,7 @@
 
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" name="hasProjector" id="hasProjector" autocomplete="off">
-                        <label class="form-check-label" for="hasWhiteboard">Has a projector</label>
+                        <label class="form-check-label" for="hasProjector">Has a projector</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary" onclick="WriteCookie()">Submit</button>
