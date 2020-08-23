@@ -13,21 +13,21 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="floor">Floor*</label>
+                        <label for="floor">Floor</label>
                         <input type="number" class="form-control" name="floor" id="floor" placeholder="Example : 0, 1, 2, 3,..." autocomplete="off">
                     </div>
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="hasWhiteboard" id="hasWhiteboard" autocomplete="off">
-                        <label class="form-check-label" for="hasWhiteboard">Has a whiteboard</label>
+                        <input type="checkbox" class="form-check-input" name="hasWhiteboard" id="hasWhiteboard">
+                        <label class="form-check-label" for="hasWhiteboard">Has a whiteboard*</label>
                     </div>
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="hasProjector" id="hasProjector" autocomplete="off">
-                        <label class="form-check-label" for="hasProjector">Has a projector</label>
+                        <input type="checkbox" class="form-check-input" name="hasProjector" id="hasProjector">
+                        <label class="form-check-label" for="hasProjector">Has a projector*</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" onclick="WriteCookie()">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

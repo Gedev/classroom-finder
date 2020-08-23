@@ -6,8 +6,10 @@ use App\Classroom;
 use App\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -40,11 +42,19 @@ class ClassroomsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+        ]);
+
+        $classroom = new Classroom([
+            'id' => $request->get('id')
+        ]);
+        $classroom->save();
+        return redirect('classrooms')->with('success', 'Classroom created !');
     }
 
     /**
