@@ -68,7 +68,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('users')->with('success', 'Student successfully created!');
+        return redirect('users')->with('success', 'The user has been successfully created!');
     }
 
     /**
