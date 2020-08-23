@@ -49,11 +49,27 @@ class ClassroomsController extends Controller
         $request->validate([
             'id' => 'required',
         ]);
-
+        $request_hasWhiteboard = $request->get('has_whiteboard');
+        $request_hasProjector = $request->get('has_projector');
         $classroom = new Classroom([
-            'id' => $request->get('id')
+            'id' => $request->get('id'),
+            'floor' => $request->get('floor'),
+            'nb_of_seats' => $request->get('nb_of_seats'),
+            'has_whiteboard' => $request->get('has_whiteboard'),
+            'has_projector' => $request->get('has_projector'),
         ]);
+
+        if(!$request_hasWhiteboard) {
+            $classroom['has_whiteboard'] = 0;
+        }
+
+        if(!$request_hasProjector) {
+            $classroom['has_projector'] = 0;
+        }
+
+
         $classroom->save();
+
         return redirect('classrooms')->with('success', 'Classroom created !');
     }
 
