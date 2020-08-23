@@ -33,7 +33,9 @@ Route::get('/attendance', 'HomeController@attendanceRecord')
     ->name('attendanceRecord')
     ->middleware('roleVerification');
 
-Route::resource('users', 'UserController');
-Route::resource('classrooms', 'ClassroomsController');
+Route::resource('users', 'UserController')
+    ->middleware('roleVerification');
+Route::resource('classrooms', 'ClassroomsController')
+    ->middleware('roleVerification');
 
 

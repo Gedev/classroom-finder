@@ -16,7 +16,7 @@ class RoleVerification
      */
     public function handle($request, Closure $next)
     {
-        if ((auth()->user()->role == 'professor') || (auth()->user()->role == 'director')) {
+        if (Auth::check() && ((auth()->user()->role == 'professor') || (auth()->user()->role == 'director'))) {
             return $next($request);
         } else {
             return redirect()->route('welcome');
