@@ -22,6 +22,11 @@
                 <h4>Classrooms</h4>
                     @if(Auth::user()->role == 'director')
                         <a href="{{ route('classrooms.create') }}" class="btn btn-success">(+) Add a classroom</a>
+                    Add filter : 
+                        <a href="" class="btn btn-info">Floor</a>
+                        <a href="" class="btn btn-info">Number of seats</a>
+                        <a href="" class="btn btn-info">Has whiteboard</a>
+                        <a href="" class="btn btn-info">Has projector</a>
                     @endif
                 <table class="table">
                     <thead>
