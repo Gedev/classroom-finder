@@ -40,10 +40,12 @@
 
                     @php $toEnd = count($users);@endphp
                     @foreach ($users as $user)
-                        @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)
-                            <tr class="justCreated">
-                        @else
-                            <tr>
+                        @if (isset($_COOKIE["newUserData"]))
+                            @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)
+                                <tr class="justCreated">
+                            @else
+                                <tr>
+                            @endif
                         @endif
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
