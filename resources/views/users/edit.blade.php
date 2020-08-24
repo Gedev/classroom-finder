@@ -19,13 +19,15 @@
                         <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" placeholder="Enter email" autocomplete="off">
                     </div>
 
-                    <div class="form-group">
-                        <label for="role">Role*</label>
-                        <select class="form-control" name="role" id="role">
-                            <option>Student</option>
-                            <option>Professor</option>
-                        </select>
-                    </div>
+                    @if(Auth::user()->role == 'director')
+                        <div class="form-group">
+                            <label for="role">Role*</label>
+                            <select class="form-control" name="role" id="role">
+                                <option>Student</option>
+                                <option>Professor</option>
+                            </select>
+                        </div>
+                    @endif
 
                     <div class="form-group">
                         <label for="idCard">Id card</label>
