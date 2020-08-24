@@ -9,10 +9,10 @@
                 <form method="post" action="{{ route('classrooms.update', $classroom->id) }}" >
                     {{ csrf_field() }}
                     @method('PATCH')
-                    <h4>Create a classroom</h4>
+                    <h4>Edit a classroom</h4>
                     <div class="form-group">
-                        <label for="id">id*</label>
-                        <input type="text" class="form-control" name="id" id="id" min="0" value="{{ $classroom->id }}"/>
+                        <label for="id">id</label>
+                        <input type="text" class="form-control" name="id" id="id" min="0" value="{{ $classroom->id }}" readonly/>
                     </div>
 
                     <div class="form-group">
