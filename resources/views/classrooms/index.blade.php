@@ -45,6 +45,9 @@
                             <td>{{ $classroom->nb_of_seats }}</td>
                             <td>{{ $classroom->has_whiteboard }}</td>
                             <td>{{ $classroom->has_projector }}</td>
+                            <td>
+                                <a href="{{ route('classrooms.edit', $classroom->id)}}" class="btn btn-primary">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>

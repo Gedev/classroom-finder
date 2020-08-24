@@ -30,7 +30,7 @@
             </tr>
             </thead>
 
-            @php $toEnd = count($users);@endphp
+            @php $toEnd = count($users); @endphp
             @foreach ($users as $user)
                 @if (isset($_COOKIE["newUserData"]))
                     @if(0 === --$toEnd && $_COOKIE["newUserData"]==1)

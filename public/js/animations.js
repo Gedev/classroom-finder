@@ -13,6 +13,6 @@ function ReadCookie() {
     alert(cookieValue);
     console.log(document.cookie);
     console.log(cookieValue);
-    return cookieValue;
+    return 'newUserData = ' + cookieValue;
 }
 

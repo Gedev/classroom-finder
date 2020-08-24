@@ -15,8 +15,6 @@ message.addEventListener('input', function () {
                   "color": "white",
                   "animation": "mymove 1s 1",
                   "animation-fill-mode": "forwards"})
-
-        // testAnimation.animate({"background-color": "red"}, "slow");
     }
 });
 
