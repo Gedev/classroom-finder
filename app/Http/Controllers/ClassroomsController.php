@@ -101,11 +101,22 @@ class ClassroomsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id' => 'required|Integer|Min:1|Max:500',
+            'nb_of_seats' => 'Integer',
+        ]);
+
+        $classroom = Classroom::find($id);
+
+        $classroom->id = $request->get('id');
+        $classroom->nb_of_seats = $request->get('nb_of_seats');
+        $classroom->save();
+
+        return redirect('/classrooms')->with('success', 'The classroom has been successfully updated !');
     }
 
     /**
