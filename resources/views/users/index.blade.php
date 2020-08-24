@@ -27,6 +27,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Role</th>
             </tr>
             </thead>
 
@@ -42,6 +43,13 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        @if($user->role)
+                            <td>{{ $user->role }}</td>
+                        @else
+                            <td><span class="text-danger" id="basic-addon3">
+                                <i>NO ROLE ASSIGNED</i>
+                            </span></td>
+                        @endif
                         <td>
                             <a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
                         </td>
