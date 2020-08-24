@@ -43,8 +43,16 @@
                             <td>{{ $classroom->id }}</td>
                             <td>{{ $classroom->floor }}</td>
                             <td>{{ $classroom->nb_of_seats }}</td>
-                            <td>{{ $classroom->has_whiteboard }}</td>
-                            <td>{{ $classroom->has_projector }}</td>
+                            @if($classroom->has_whiteboard === 1)
+                                <td class="text-success">Yes</td>
+                            @else
+                                <td class="text-danger">No</td>
+                            @endif
+                            @if($classroom->has_projector === 1)
+                                <td class="text-success">Yes</td>
+                            @else
+                                <td class="text-danger">No</td>
+                            @endif
                             <td>
                                 <a href="{{ route('classrooms.edit', $classroom->id)}}" class="btn btn-primary">Edit</a>
                             </td>
