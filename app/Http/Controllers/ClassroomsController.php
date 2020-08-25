@@ -114,6 +114,18 @@ class ClassroomsController extends Controller
 
         $classroom->id = $request->get('id');
         $classroom->nb_of_seats = $request->get('nb_of_seats');
+        if($request->get('has_whiteboard') == 1) {
+            $classroom->has_whiteboard = 1;
+        }else{
+            $classroom->has_whiteboard = 0;
+        }
+
+        if($request->get('has_projector') == 1) {
+            $classroom->has_projector = 1;
+        }else{
+            $classroom->has_projector = 0;
+        }
+
         $classroom->save();
 
         return redirect('/classrooms')->with('success', 'The classroom has been successfully updated !');
