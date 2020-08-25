@@ -25,18 +25,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'HomeController@homepage')->name('index');
 Route::get('/userAccount', 'HomeController@userAccount')->name('userAccount');
 
-Route::get('/adminPanel', 'HomeController@adminPanel')
-    ->name('adminPanel')
-    ->middleware('roleVerification');
+Route::group(['middleware', ['roleVerification']], function () {
+    Route::get('/adminPanel', 'HomeController@adminPanel')
+        ->name('adminPanel');
+    Route::get('/attendance', 'HomeController@attendanceRecord')
+        ->name('attendanceRecord');
+    Route::resource('users', 'UserController');
+    Route::resource('classrooms', 'ClassroomsController');
+    Route::resource('courses', 'CourseController');
+    Route::get('send-mail','MailSend@mailsend');
+});
 
-Route::get('/attendance', 'HomeController@attendanceRecord')
-    ->name('attendanceRecord')
-    ->middleware('roleVerification');
 
-Route::resource('users', 'UserController')
-    ->middleware('roleVerification');
-Route::resource('classrooms', 'ClassroomsController')
-    ->middleware('roleVerification');
-
-Route::get('send-mail','MailSend@mailsend');
 
