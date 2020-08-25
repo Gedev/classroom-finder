@@ -30,7 +30,6 @@ class TestMail extends Mailable
     public function build()
     {
 //        return $this->view('view.name');
-        return $this->subject('Mail from your Classroomfinder app')
-            ->view('emails.myTestMail');
+        return $this->subject('Mail from your Classroomfinder app')->view('userAccount');
     }
 }

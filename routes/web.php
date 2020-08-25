@@ -38,4 +38,5 @@ Route::resource('users', 'UserController')
 Route::resource('classrooms', 'ClassroomsController')
     ->middleware('roleVerification');
 
+Route::get('send-mail','MailSend@mailsend');
 
