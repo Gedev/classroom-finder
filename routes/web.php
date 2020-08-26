@@ -31,7 +31,7 @@ Route::group(['middleware', ['roleVerification']], function () {
     Route::get('/attendance', 'HomeController@attendanceRecord')
         ->name('attendanceRecord');
     Route::resource('users', 'UserController');
-    Route::resource('classrooms', 'ClassroomsController');
+    Route::resource('classrooms', 'ClassroomController');
     Route::resource('courses', 'CourseController');
     Route::get('send-mail','MailSend@mailsend');
 });
