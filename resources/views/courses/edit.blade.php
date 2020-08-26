@@ -6,22 +6,17 @@
     <div class="bodyContent row justify-content-center">
         <div class="col-md-8">
             <h4>Courses</h4>
+            <form method="post" action="{{ route('courses.update', $course->id) }}" id="editCourseForm" name="editCourseForm">
+                <div class="form-group">
+                    <label for="id">Id*</label>
+                    <input type="number" class="form-control" name="id" id="id" value="{{ $course->id }}"/>
+                </div>
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Id classroom</th>
-                </tr>
-                </thead>
-            @foreach($courses as $course)
-                <tr>
-                    <td>{{  $course->id}}</td>
-                    <td>{{  $course->name}}</td>
-                    <td>{{  $course->id_classroom}}</td>
-                </tr>
-            @endforeach
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input type="text" class="form-control" name="name" id="name" value="{{ $course->name }}" autocomplete="off">
+                </div>
+            </form>
         </div>
     </div>
 </div>
