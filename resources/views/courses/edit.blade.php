@@ -15,17 +15,13 @@
                     <th scope="col">Id classroom</th>
                 </tr>
                 </thead>
-                @foreach($courses as $course)
-                    <tr>
-                        <td>{{  $course->id}}</td>
-                        <td>{{  $course->name}}</td>
-                        <td>{{  $course->id_classroom}}</td>
-                        <td>
-                            <a href="{{ route('courses.edit',$course->id)}}" class="btn btn-primary">Edit</a>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+            @foreach($courses as $course)
+                <tr>
+                    <td>{{  $course->id}}</td>
+                    <td>{{  $course->name}}</td>
+                    <td>{{  $course->id_classroom}}</td>
+                </tr>
+            @endforeach
         </div>
     </div>
 </div>
