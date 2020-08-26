@@ -11,11 +11,11 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('course.index',
+        return view('courses.index',
             ['courses' => Course::all()]
         );
     }
@@ -23,11 +23,11 @@ class CourseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('courses.create');
     }
 
     /**
