@@ -40,7 +40,7 @@
                         </div>
                     @endif
                     <h4>Courses</h4>
-                    <a class="btn btn-primary" href="">List of courses</a>
+                    <a class="btn btn-primary" href="{{ Route('courses.index') }}">List of courses</a>
                 </div>
             </div>
 
@@ -55,7 +55,6 @@
                     <a class="btn btn-primary" href="">List of sections</a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
