@@ -13,7 +13,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
-class ClassroomsController extends Controller
+class ClassroomController extends Controller
 {
     /**
      * Display a listing of the resource.
