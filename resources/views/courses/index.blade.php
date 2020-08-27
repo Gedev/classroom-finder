@@ -23,6 +23,37 @@
                         <td>
                             <a href="{{ route('courses.edit',$course->id)}}" class="btn btn-primary">Edit</a>
                         </td>
+                        <td>
+                            <form action="{{ route('courses.destroy', $course->id)}}" method="post" id="deleteCourseForm">
+                                @csrf
+                                @method('DELETE')
+                                {{-- DELETE BUTTON --}}
+                                <button type="button" class="btn btn-danger" onclick="deleteData({{$course->id}})" data-toggle="modal" data-target="#confirmDeleteModal<?= $course->id?>">Delete</button>
+
+                                <!-- MODAL -->
+                                <div class="modal fade" id="confirmDeleteModal<?= $course->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Do you really want to delete this record? This process cannot be undone.
+                                                {{ $course->id }} / {{ $course->name }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button class="btn btn-danger" type="submit" onclick="deleteCourseData()">Confirm Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- END MODAL --}}
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </table>

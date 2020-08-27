@@ -26,10 +26,22 @@ function deleteData(id)
         url = url.replace(':id', id);
         $("#deleteUserForm").attr('action', url);
     }
+function deleteCourseData(id)
+    {
+        var id = id;
+        var url = '{{ route("courses.destroy", ":id") }}';
+        url = url.replace(':id', id);
+        $("#deleteCourseForm").attr('action', url);
+    }
 
 function confirmDeleteUser() {
     console.log("ConfirmDeleteUser ??")
     document.getElementById("deleteUserForm").submit();
+}
+
+function confirmDeleteCourse() {
+    console.log("ConfirmDeleteCourse ??")
+    document.getElementById("deleteCourseForm").submit();
 }
 
 // $.ajaxSetup({
