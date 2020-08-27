@@ -16,6 +16,11 @@
                     <label for="name">Name*</label>
                     <input type="text" class="form-control" name="name" id="name" value="{{ $course->name }}" autocomplete="off">
                 </div>
+
+                <div class="form-group">
+                    <label for="id_classroom">Classroom Id associated</label>
+                    <input type="text" class="form-control" name="id_classroom" id="id_classroom" value="{{ $course->id_classroom }}" autocomplete="off">
+                </div>
             </form>
         </div>
     </div>

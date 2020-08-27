@@ -15,12 +15,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Name*</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Enter a name" autocomplete="off">
                     </div>
 
                     <div class="form-group">
-                        <label for="id_classroom">Can you specify the Id of the room where it will be teached ?</label>
+                        <label for="id_classroom">Can you specify the Id of the room where it will be teached ?*</label>
                         <input type="number" class="form-control" name="id_classroom" id="id_classroom" placeholder="id_classroom">
                     </div>
 
