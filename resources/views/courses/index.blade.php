@@ -26,6 +26,9 @@
                     </tr>
                 @endforeach
             </table>
+            @if(Auth::user()->role == 'director')
+                <a href="{{ route('courses.create') }}" class="btn btn-success">(+) Add a course</a>
+            @endif
         </div>
     </div>
 </div>
