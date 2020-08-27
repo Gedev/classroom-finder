@@ -89,11 +89,25 @@ class CourseController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'id_classroom' => 'required',
+        ]);
+
+        $course = Course::find($id);
+
+        $course->id = $request->get('id');
+        $course->name = $request->get('name');
+        $course->id_classroom = $request->get('id_classroom');
+
+        $course->save();
+
+        return redirect('/courses')->with('success', 'The course has been updated');
     }
 
     /**
