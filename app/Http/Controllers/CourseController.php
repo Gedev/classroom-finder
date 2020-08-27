@@ -80,7 +80,7 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        $course = User::find($id);
+        $course = Course::find($id);
         return view('courses.edit', compact('course'));
     }
 
