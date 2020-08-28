@@ -34,6 +34,8 @@ Route::group(['middleware', ['roleVerification']], function () {
     Route::resource('classrooms', 'ClassroomController');
     Route::resource('courses', 'CourseController');
     Route::get('send-mail','MailSend@mailsend');
+    Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
+        ->name('permissions');
 });
 
 
