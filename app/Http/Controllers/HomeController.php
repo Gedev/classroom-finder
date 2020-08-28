@@ -51,6 +51,11 @@ class HomeController extends Controller
         return view('adminPanel');
     }
 
+    public function adminPanelPermissions()
+    {
+        return view('admin/permissions');
+    }
+
     public function attendanceRecord()
     {
         $users = DB::table('users')->get();

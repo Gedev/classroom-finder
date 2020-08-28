@@ -4,6 +4,10 @@
     padding: 2%;
 }
 
+.bodyContent .card-body:hover {
+    background-color: rgba(0, 189, 145, .1);;
+}
+
 img .role_icons {
     width: 25px !important;
 }
@@ -32,5 +36,6 @@ img .role_icons {
 .justCreated {
     background-color: #31d074;
 }
+
 
 
