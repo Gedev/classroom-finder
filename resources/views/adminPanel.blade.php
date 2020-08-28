@@ -63,7 +63,7 @@
                         </div>
                     @endif
                     <h4>Sections</h4>
-                    <a class="btn btn-primary" href="">List of sections</a>
+                    <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
                 </div>
             </div>
         </div>
