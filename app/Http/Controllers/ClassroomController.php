@@ -139,6 +139,10 @@ class ClassroomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classroom = Classroom::find($id);
+        $classroom->delete();
+
+        return redirect('/classrooms')->with('success', 'The classroom {{ $classroom }} has been deleted Successfully');
+
     }
 }
