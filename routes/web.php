@@ -36,6 +36,7 @@ Route::group(['middleware', ['roleVerification']], function () {
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
+    Route::resource('sections', 'SectionController');
 });
 
 
