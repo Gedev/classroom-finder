@@ -21,3 +21,17 @@
     'php artisan migrate' follow by 'php artisan db:seed' to fill the database with data.
     
 8. Use 'php artisan serve' to launch the localhost
+
+
+## Mail configuration
+
+In the .env file, replace like the following :
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME="Your email"
+MAIL_PASSWORD="your password"
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS="Your email"
+MAIL_FROM_NAME="${APP_NAME}"
