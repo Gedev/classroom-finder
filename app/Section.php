@@ -9,6 +9,5 @@ class Section extends Model
     protected $fillable = [
         'id',
         'name',
-        'courses',
     ];
 }
