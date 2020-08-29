@@ -33,10 +33,11 @@ Route::group(['middleware', ['roleVerification']], function () {
     Route::resource('users', 'UserController');
     Route::resource('classrooms', 'ClassroomController');
     Route::resource('courses', 'CourseController');
+    Route::resource('sections', 'SectionController');
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
-    Route::resource('sections', 'SectionController');
+
 });
 
 

@@ -11,7 +11,7 @@
             <div class="first-letter-title">A</div>
             <div class="title">dmin Panel</div>
         </div>
-        
+
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
