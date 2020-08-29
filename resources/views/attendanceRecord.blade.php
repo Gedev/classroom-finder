@@ -6,7 +6,7 @@
 @section('realTimeFormValidation')
     <div class="container">
         <div class="bodyContent row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <p>
                     <div class="alert-light">
                         <div class="first-letter-title">A</div>
