@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->timestamps();
             $table->String('name');
             $table->Integer('id_classroom');
-            $table->Integer('id_section');
+            $table->Integer('id_section')->nullable();
         });
     }
 
