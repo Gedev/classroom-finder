@@ -15,9 +15,9 @@
                 </p>
                 <form>
                     <div class="form-group">
-                        <label for="inputGroupSelect01">Select your class</label>
-                        <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>...</option>
+                        <label for="classroomSelect">Select your class</label>
+                        <select class="custom-select" id="classroomSelect" onChange="classroomSelect(this.value)>
+                            <option selected>Select a classroom</option>
                             @foreach ($classrooms as $classroom)
                                 <option value="{{ $classroom->id }}">
                                     {{ $classroom->id }}
