@@ -15,8 +15,11 @@ class TrainingSeeder extends Seeder
         DB::table('trainings')->insert([
             [
                 'id' => '1',
-                'name' => 'webdev',
-                '' => '',
+                'name' => 'Webdev',
+            ],
+            [
+                'id' => '2',
+                'name' => 'Bachelier en informatique de gestion',
             ]
         ]);
     }
