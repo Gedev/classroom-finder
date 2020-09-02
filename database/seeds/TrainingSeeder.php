@@ -12,7 +12,7 @@ class TrainingSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('trainings')->insert([
+        DB::table('training')->insert([
             [
                 'id' => '1',
                 'name' => 'Webdev',
