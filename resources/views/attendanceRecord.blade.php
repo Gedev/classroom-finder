@@ -16,7 +16,7 @@
                 <form>
                     <div class="form-group">
                         <label for="classroomSelect">Select your class</label>
-                        <select class="custom-select" id="classroomSelect" onChange="classroomSelect(this.value)>
+                        <select class="custom-select" id="classroomSelect">
                             <option selected>Select a classroom</option>
                             @foreach ($classrooms as $classroom)
                                 <option value="{{ $classroom->id }}">
@@ -25,6 +25,20 @@
                             @endforeach
                         </select>
                     </div>
+                </form>
+                <form>
+                    <div class="form-group">
+                        <label for="sectionSelect">Select your section</label>
+                        <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
+                            <option selected>Select your section</option>
+                            @foreach ($sections as $section)
+                                <option value="{{ $section->id }}">
+                                    {{ $section->id.". ".$section->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                 </form>
                 <table class="table">
                     <thead>
