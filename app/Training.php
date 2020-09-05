@@ -9,6 +9,5 @@ class Training extends Model
     protected $fillable = [
         'id',
         'name',
-        'courses',
     ];
 }

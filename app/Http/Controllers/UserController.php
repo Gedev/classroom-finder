@@ -90,8 +90,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', compact('user'));
+        $users = User::find($id);
+        $classrooms = DB::table('classrooms')->get();
+        $training = DB::table('training')->get();
+
+        return view('users.edit', [
+            'user'=>$users,
+            'classrooms'=>$classrooms,
+            'sections' => $training
+        ]);
     }
 
     /**
