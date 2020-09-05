@@ -36,6 +36,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
+                    <th scope="col">Training</th>
                 </tr>
                 </thead>
 
@@ -58,6 +59,7 @@
                                     <i>NO ROLE ASSIGNED</i>
                                 </span></td>
                             @endif
+                            <td>{{ $user->training }}</td>
                             <td>
                                 <a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
                             </td>
