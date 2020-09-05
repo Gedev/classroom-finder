@@ -30,6 +30,18 @@
                     @endif
 
                     <div class="form-group">
+                        <label for="sectionSelect">Select your section</label>
+                        <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
+                            <option selected>Select your section</option>
+                            @foreach ($sections as $section)
+                                <option value="{{ $section->id }}">
+                                    {{ $section->id.". ".$section->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="idCard">Id card</label>
                         <input type="text" class="form-control" value="{{ $user->idCard }}" name="idCard" id="idCard">
                         <small id="emailHelp" class="form-text text-muted">Use a card unused with the card reader. This field may be completed later.</small>
