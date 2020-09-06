@@ -16,9 +16,14 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Permissions</h5>
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <h5 class="card-title">Sections</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn btn-primary" href="{{ Route('permissions') }}">Permissions</a>
+                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
                     </div>
                 </div>
             </div>
@@ -72,9 +77,18 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <h5 class="card-title">Sections</h5>
+                            <h5 class="card-title">Trainings</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
+                        <a class="btn btn-primary" href="">List of sections</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Permissions</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a class="btn btn-primary" href="{{ Route('permissions') }}">Permissions</a>
                     </div>
                 </div>
             </div>
