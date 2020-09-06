@@ -17,7 +17,7 @@ function consoleLogDebug(value) {
     $.ajax({
         type:'GET',
         url:'/getSection',
-        data:'_token = <?php echo csrf_token() ?>',
+        data:$('#sectionSelect').val(),
         success:function(data) {
             alert('Ajax : success')
         }
