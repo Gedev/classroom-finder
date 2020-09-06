@@ -64,7 +64,7 @@ class HomeController extends Controller
         return view('attendanceRecord', [
             'users'=>$users,
             'classrooms'=>$classrooms,
-            'sections' => $training
+            'trainings' => $training
         ]);
     }
 }

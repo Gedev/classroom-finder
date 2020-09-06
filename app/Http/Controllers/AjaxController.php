@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
+
+
 
 class AjaxController extends Controller
 {
     public function index($id) {
-        var_dump('hello');
-        $users = User::where('id', $id);
 
-        return response($users);
+        if (Request::ajax())
+        {
+            $users[] = User::where('id', $id);
+
+        }
+        return response()->json($users);
     }
 }

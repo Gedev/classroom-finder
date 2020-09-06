@@ -31,9 +31,9 @@
                         <label for="sectionSelect">Select your section</label>
                         <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
                             <option selected>Select your section</option>
-                            @foreach ($sections as $section)
-                                <option value="{{ $section->id }}">
-                                    {{ $section->id.". ".$section->name }}
+                            @foreach ($trainings as $training)
+                                <option value="{{ $training->id }}">
+                                    {{ $training->id.". ".$training->name }}
                                 </option>
                             @endforeach
                         </select>
@@ -57,7 +57,7 @@
                         </tr>
                     @endforeach
                 </table>
-
+                <div id="something"></div>
                 <div>
                     <label for="message">Please use your id card with the card to register your presence.</label>
                     <input class="form-control" placeholder="Enter some text" id="message" type="password" autocomplete="off" />
