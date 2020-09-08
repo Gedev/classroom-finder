@@ -71,4 +71,19 @@
 
 @section('scripts')
     <script src="{{ asset('js/realTimeFormValidation.js') }}" defer></script>
+    <script>
+        function consoleLogDebug(value) {
+            console.log(value);
+            $.ajax({
+                type:'GET',
+                url: "{{ route('AjaxControllerIndex', $value) }}",
+                data: value,
+
+                success:function(response) {
+                    alert('Ajax : success' + " " + response);
+                $('#something').html(response);
+            }
+        });
+    }
+    </script>
 @endsection

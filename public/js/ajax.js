@@ -10,17 +10,3 @@ function sectionSelect(value) {
         }
     });
 }
-
-
-function consoleLogDebug(value) {
-    console.log(value);
-    $.ajax({
-        type:'GET',
-        url:'/getSection/{id}',
-        data: value,
-        success:function(response) {
-            alert('Ajax : success' + " " + response);
-            $('#something').html(response);
-        }
-    });
-}
