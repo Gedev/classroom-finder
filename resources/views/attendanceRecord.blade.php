@@ -50,10 +50,10 @@
                     </thead>
                     @foreach ($users as $user)
                         <tr class="{{ $user->name }}" id="attendanceRow">
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->idCard }}</td>
+                            <td class="attendanceId">{{ $user->id }}</td>
+                            <td class="attendanceName">{{ $user->name }}</td>
+                            <td class="attendanceEmail">{{ $user->email }}</td>
+                            <td class="attendanceTraining">{{ $user->idCard }}</td>
                         </tr>
                     @endforeach
                 </table>
@@ -76,12 +76,13 @@
             console.log(value);
             $.ajax({
                 type:'GET',
-                url: "{{ route('AjaxControllerIndex', $value) }}",
+                url: 'getSection/'+value,
                 data: value,
 
                 success:function(response) {
-                    alert('Ajax : success' + " " + response);
-                $('#something').html(response);
+                    var obj = JSON.parse(response);
+                    console.log('Ajax : success' + " " + obj);
+                    $('#attendanceRow').html(obj.data[0].id);
             }
         });
     }
