@@ -40,7 +40,7 @@
                     </div>
 
                 </form>
-                <table class="table">
+                <table class="table" id="tableInsertAfterSelect">
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -48,14 +48,8 @@
                         <th scope="col">Email</th>
                     </tr>
                     </thead>
-                    @foreach ($users as $user)
-                        <tr class="{{ $user->name }}" id="attendanceRow">
-                            <td class="attendanceId">{{ $user->id }}</td>
-                            <td class="attendanceName">{{ $user->name }}</td>
-                            <td class="attendanceEmail">{{ $user->email }}</td>
-                            <td class="attendanceTraining">{{ $user->idCard }}</td>
+                        <tr id="attendanceRow">
                         </tr>
-                    @endforeach
                 </table>
                 <div id="something"></div>
                 <div>
@@ -77,12 +71,18 @@
             $.ajax({
                 type:'GET',
                 url: 'getSection/'+value,
+                datatype: 'json',
                 data: value,
 
                 success:function(response) {
                     var obj = JSON.parse(response);
-                    console.log('Ajax : success' + " " + obj);
-                    $('#attendanceRow').html(obj.data[0].id);
+                    console.log("obj : ", obj);
+                    for(prop in obj) {
+                        var item = obj[prop];
+                        console.log('prop', prop);
+                        $('#attendanceRow')
+                            .append(item.id + " " + item.name + " " + item.email);
+                }
             }
         });
     }

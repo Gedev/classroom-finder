@@ -13,7 +13,7 @@ class AjaxController extends Controller
     public function index($id) {
         if (Request::ajax())
         {
-            $users['data'] = User::where('id', $id)->get();
+            $users = User::where('training', $id)->get();
             $users=json_encode($users);
             \Log::info($users);
         }
