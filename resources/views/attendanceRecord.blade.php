@@ -40,7 +40,7 @@
                     </div>
 
                 </form>
-                <table class="table" id="tableInsertAfterSelect">
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -48,8 +48,8 @@
                         <th scope="col">Email</th>
                     </tr>
                     </thead>
-                        <tr id="attendanceRow">
-                        </tr>
+                    <tbody id="tableInsertAfterSelect">
+                    </tbody >
                 </table>
                 <div id="something"></div>
                 <div>
@@ -77,14 +77,18 @@
                 success:function(response) {
                     var obj = JSON.parse(response);
                     console.log("obj : ", obj);
+                    var myTable = "";
                     for(prop in obj) {
-                        var item = obj[prop];
+                        let item = obj[prop];
                         console.log('prop', prop);
-                        $('#attendanceRow')
-                            .append(item.id + " " + item.name + " " + item.email);
+                        myTable +="<tr><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
+
+                    }
+                    console.log(myTable);
+                    $('#tableInsertAfterSelect')
+                        .html(myTable);
                 }
-            }
-        });
-    }
+            });
+        }
     </script>
 @endsection
