@@ -11,12 +11,13 @@
                 <div class="first-letter-title">A</div>
                 <div class="title">ttendance</div>
             </div>
+            <hr>
 
             <div class="row">
                 <div class="col-md-6">
                     <form>
                         <div class="form-group">
-                            <label for="classroomSelect">Select your class</label>
+                            <label for="classroomSelect" class="font-weight-bold">Select your class</label>
                             <select class="custom-select" id="classroomSelect">
                                 <option selected>Select a classroom</option>
                                 @foreach ($classrooms as $classroom)
@@ -32,7 +33,7 @@
                 <div class="col-md-6">
                     <form>
                         <div class="form-group">
-                            <label for="sectionSelect">Select your section</label>
+                            <label for="sectionSelect" class="font-weight-bold">Select your section</label>
                             <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
                                 <option selected>Select your section</option>
                                 @foreach ($trainings as $training)
@@ -84,7 +85,7 @@
                     var myTable = "";
                     for(prop in obj) {
                         let item = obj[prop];
-                        myTable +="<tr><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
+                        myTable +="<tr class=\"fadeIn\"><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
 
                     }
                     $('#tableInsertAfterSelect')
