@@ -15,6 +15,7 @@
     <script src="{{ asset('js/realTimeFormValidation.js') }}" defer></script>
     <script src="{{ asset('js/ajax.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7fc5ea2cda.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -47,7 +48,8 @@
                                 @auth
                                     @if(Auth::user()->role=='professor' || Auth::user()->role=='director')
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('attendanceRecord') }}">{{ __('Attendance') }}</a>
+                                            <a class="nav-link" href="{{ route('attendanceRecord') }}">
+                                                <i class="fas fa-school"></i> {{ __('Attendance') }}</a>
                                         </li>
                                     @endif
                                 @endauth
@@ -72,16 +74,17 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->role=='professor' || Auth::user()->role=='director')
                                         <a class="dropdown-item" href="{{ route('adminPanel') }}">
-                                            Admin panel
+                                            <i class="fas fa-user-shield"></i> Admin panel
                                         </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('userAccount') }}">
-                                        My account
+                                        <i class="fas fa-users-cog"></i> My account
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="fas fa-sign-out-alt"></i>
+                                         {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
