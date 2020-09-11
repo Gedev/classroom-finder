@@ -51,8 +51,7 @@
                     <tbody id="tableInsertAfterSelect">
                     </tbody >
                 </table>
-                <div id="something"></div>
-                <div>
+                <div id="InputRFID">
                     <label for="message">Please use your id card with the card to register your presence.</label>
                     <input class="form-control" placeholder="Enter some text" id="message" type="password" autocomplete="off" />
                     <p id="result"></p>
@@ -87,6 +86,8 @@
                     console.log(myTable);
                     $('#tableInsertAfterSelect')
                         .html(myTable);
+
+                    showInput();
                 }
             });
         }
