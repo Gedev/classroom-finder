@@ -60,8 +60,9 @@
                 </tbody >
             </table>
             <div id="InputRFID">
-                <label for="message">Please use your id card with the card to register your presence.</label>
-                <input class="form-control" placeholder="Enter some text" id="message" type="password" autocomplete="off" />
+                <label for="message" class="font-weight-bold">Enter your identification code</label>
+                <input class="form-control" id="message" type="password" autocomplete="off" />
+                <small id="emailHelp" class="form-text text-muted">Please use your card with the reader to register your presence.</small>
                 <p id="result"></p>
             </div>
 
