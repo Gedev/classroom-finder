@@ -42,7 +42,7 @@ img .role_icons {
 }
 
 .fadeIn {
-    animation: fadeIn ease 5s;
+    animation: fadeIn ease 0.8s;
 }
 
 @keyframes fadeIn {

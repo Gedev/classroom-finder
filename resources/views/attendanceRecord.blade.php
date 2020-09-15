@@ -82,13 +82,20 @@
                 data: value,
 
                 success:function(response) {
-                    var obj = JSON.parse(response);
                     var myTable = "";
-                    for(prop in obj) {
-                        let item = obj[prop];
-                        myTable +="<tr class=\"fadeIn\"><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
+                    if(response === "")
+                    {
+                        myTable = "No records";
+                    } else {
+                        var obj = JSON.parse(response);
 
+                        for(prop in obj) {
+                            let item = obj[prop];
+                            myTable +="<tr class=\"fadeIn\"><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
+                        }
                     }
+
+
                     $('#tableInsertAfterSelect')
                         .html(myTable);
 

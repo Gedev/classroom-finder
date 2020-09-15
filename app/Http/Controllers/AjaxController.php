@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 
 
@@ -14,8 +13,16 @@ class AjaxController extends Controller
         if (Request::ajax())
         {
             $users = User::where('training', $id)->get();
-            $users=json_encode($users);
-            \Log::info($users);
+            if (!($users->count()))
+            {
+                \Log::info("EMPTY");
+                $users="";
+            } else {
+                \Log::info("users :" . $users);
+                $users=json_encode($users);
+            }
+
+
         }
         return response($users);
     }
