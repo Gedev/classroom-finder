@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="bodyContent justify-content-center">
-        <div class="alert-light">
+        <div class="globalTitle alert-light">
             <div class="first-letter-title">A</div>
             <div class="title">dmin Panel</div>
         </div>

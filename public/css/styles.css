@@ -19,6 +19,10 @@ img .role_icons {
     background-color: rgba(255, 255, 255, 0);;
 }
 
+.globalTitle {
+    margin-bottom: 20px;
+}
+
 .first-letter-title {
     display: inline;
     color: #ff7802;
@@ -48,6 +52,21 @@ img .role_icons {
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+.glowEffect {
+    /*background: 50% 100% / 50% 50% no-repeat*/
+    /*radial-gradient(ellipse at bottom, #fff, transparent, transparent);*/
+    /*-webkit-background-clip: text;*/
+    /*background-clip: text;*/
+    /*font-family: "Source Sans Pro", sans-serif;*/
+    animation: glow 2500ms linear infinite 500ms;
+}
+
+@keyframes glow {
+    40% {
+        text-shadow: 0 0 1px #db1414;
+    }
 }
 
 

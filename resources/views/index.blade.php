@@ -13,6 +13,8 @@
                 @php
                     $mytime = Carbon\Carbon::now();
                     $mytime->setTimezone('GMT+2');
+                    $currentDay = $mytime->isoFormat('d');
+
                     echo $mytime->locale('fr')->isoFormat('dddd, Do MMMM YYYY, HH:mm');
                 @endphp
 
@@ -32,11 +34,16 @@
                     @for($i = 0; $i < 10; $i++)
                         <tr>
                             <th>{{ $i+8 }}h-{{ $i+9 }}h</th>
-                            @for($j = 0; $j < 7; $j++)
+                            @for($j = 1; $j < 8; $j++)
                                 @if($i == 4)
                                     <td class="table-dark"></td>
                                 @else
-                                    <td></td>
+                                {{-- Get current day --}}
+                                    @if($j == $currentDay)
+                                        <td class="bg-info"></td>
+                                    @else
+                                        <td></td>
+                                    @endif
                                 @endif
                             @endfor
                         </tr>

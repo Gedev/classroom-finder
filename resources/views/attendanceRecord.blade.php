@@ -7,7 +7,7 @@
     <div class="container">
         <div class="bodyContent justify-content-center">
 
-            <div class="alert-light">
+            <div class="globalTitle alert-light">
                 <div class="first-letter-title">A</div>
                 <div class="title">ttendance</div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-6">
                     <form>
                         <div class="form-group">
-                            <label for="sectionSelect" class="font-weight-bold">Select your section</label>
+                            <label for="sectionSelect" class="font-weight-bold">Select your training</label>
                             <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
                                 <option selected>Select your section</option>
                                 @foreach ($trainings as $training)
@@ -84,7 +84,7 @@
                     var myTable = "";
                     if(response === "")
                     {
-                        myTable += "<tr class=\"text-danger\"><td>No records</td></tr>";
+                        myTable += "<tr class=\"text-danger glowEffect\"><td>No records</td></tr>";
                     } else {
                         var obj = JSON.parse(response);
 
