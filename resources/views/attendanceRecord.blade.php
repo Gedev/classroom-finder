@@ -50,22 +50,23 @@
 
             <table class="table">
                 <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                </tr>
+                    <tr id="attendanceTable">
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                    </tr>
                 </thead>
+
                 <tbody id="tableInsertAfterSelect">
                 </tbody >
             </table>
+
             <div id="InputRFID">
                 <label for="message" class="font-weight-bold">Enter your identification code</label>
                 <input class="form-control" id="message" type="password" autocomplete="off" />
                 <small id="emailHelp" class="form-text text-muted">Please use your card with the reader to register your presence.</small>
                 <p id="result"></p>
             </div>
-
         </div>
     </div>
 
