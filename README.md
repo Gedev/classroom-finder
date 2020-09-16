@@ -1,5 +1,11 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
+## What is the point of the project ?
+
+The main purpose is to improve communication between professors and their students by giving the possibility to the students to see, in real time, 
+if the professor is in his class (or an other), 
+if the professor left an information message (Ex: he is late),
+
 
 ## How to install the project
 

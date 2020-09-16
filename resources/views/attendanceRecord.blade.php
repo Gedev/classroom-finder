@@ -74,7 +74,6 @@
 @section('scripts')
     <script>
         function consoleLogDebug(value) {
-            console.log(value);
             $.ajax({
                 type:'GET',
                 url: 'getSection/'+value,
@@ -85,7 +84,7 @@
                     var myTable = "";
                     if(response === "")
                     {
-                        myTable = "No records";
+                        myTable += "<tr class=\"text-danger\"><td>No records</td></tr>";
                     } else {
                         var obj = JSON.parse(response);
 
@@ -95,7 +94,7 @@
                         }
                     }
 
-
+                    console.log(response);
                     $('#tableInsertAfterSelect')
                         .html(myTable);
 

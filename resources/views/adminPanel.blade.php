@@ -22,7 +22,7 @@
                             </div>
                         @endif
                         <h5 class="card-title">Sections</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text text-info">TO DO</p>
                         <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
                     </div>
                 </div>
@@ -77,8 +77,8 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <h5 class="card-title">Trainings</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title ">Trainings</h5>
+                        <p class="card-text text-info">TO DO</p>
                         <a class="btn btn-primary" href="">List of sections</a>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Permissions</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text text-info">TO DO</p>
                         <a class="btn btn-primary" href="{{ Route('permissions') }}">Permissions</a>
                     </div>
                 </div>
