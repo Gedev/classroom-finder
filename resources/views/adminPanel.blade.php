@@ -79,7 +79,7 @@
                         @endif
                             <h5 class="card-title ">Trainings</h5>
                         <p class="card-text text-info">TO DO</p>
-                        <a class="btn btn-primary" href="">List of sections</a>
+                        <a class="btn btn-primary" href="{{ Route('trainings.index') }}">List of sections</a>
                     </div>
                 </div>
             </div>
