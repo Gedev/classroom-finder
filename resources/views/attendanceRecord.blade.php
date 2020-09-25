@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <label for="sectionSelect" class="font-weight-bold">Select your training</label>
                             <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
-                                <option selected>Select your section</option>
+                                <option selected>Select your training</option>
                                 @foreach ($trainings as $training)
                                     <option value="{{ $training->id }}">
                                         {{ $training->id.". ".$training->name }}

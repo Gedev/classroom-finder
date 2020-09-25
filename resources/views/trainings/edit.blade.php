@@ -27,15 +27,10 @@
                         <th scope="col">Name</th>
                     </tr>
                     </thead>
-                    @foreach ($trainings as $training)
                         <tr>
                             <td>{{ $training->id }}</td>
                             <td>{{ $training->name }}</td>
-                            <td>
-                                <a href="{{ route('trainings.edit', $training->id)}}" class="btn btn-primary">Edit</a>
-                            </td>
                         </tr>
-                    @endforeach
                 </table>
             </div>
         </div>

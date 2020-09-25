@@ -12,7 +12,7 @@ class TrainingSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('training')->insert([
+        DB::table('trainings')->insert([
             [
                 'id' => '1',
                 'name' => 'Webdev',
@@ -20,6 +20,22 @@ class TrainingSeeder extends Seeder
             [
                 'id' => '2',
                 'name' => 'Bachelier en informatique de gestion',
+            ],
+            [
+                'id' => '3',
+                'name' => 'Anglais',
+            ],
+            [
+                'id' => '4',
+                'name' => 'Néerlandais',
+            ],
+            [
+                'id' => '5',
+                'name' => 'Bachelier en gestion des ressources humaines',
+            ],
+            [
+                'id' => '6',
+                'name' => 'Bachelier en commerce extérieur',
             ]
         ]);
     }
