@@ -63,7 +63,8 @@ class TrainingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $training = Training::find($id);
+        return view('trainings.edit', compact('training'));
     }
 
     /**
