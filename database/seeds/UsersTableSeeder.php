@@ -19,13 +19,31 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('john_classfi'),
                 'role' => '',
                 'idCard' => '',
+                'training' => rand(0, 6),
             ],
             [
                 'name' => 'Étudiant',
-                'email' => 'student@example.com',
+                'email' => 'student00@example.com',
                 'password' => bcrypt('student_classfi'),
                 'role' => 'student',
                 'idCard' => '',
+                'training' => rand(0, 6),
+            ],
+            [
+                'name' => 'student01',
+                'email' => 'student01@example.com',
+                'password' => bcrypt('student_classfi'),
+                'role' => 'student',
+                'idCard' => '',
+                'training' => rand(0, 6),
+            ],
+            [
+                'name' => 'student02',
+                'email' => 'student02@example.com',
+                'password' => bcrypt('student_classfi'),
+                'role' => 'student',
+                'idCard' => '',
+                'training' => rand(0, 6),
             ],
             [
                 'name' => 'Professeur',
@@ -33,6 +51,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('prof_classfi'),
                 'role' => 'professor',
                 'idCard' => 'àé§è&§"§éç',
+                'training' => rand(0, 6),
             ],
             [
                 'name' => 'Directeur',
@@ -40,6 +59,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('directeur_classfi'),
                 'role' => 'director',
                 'idCard' => '',
+                'training' => rand(0, 6),
             ]
         ]);
     }
