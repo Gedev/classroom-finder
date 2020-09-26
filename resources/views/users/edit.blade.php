@@ -25,6 +25,7 @@
                             <select class="form-control" name="role" id="role">
                                 <option>Student</option>
                                 <option>Professor</option>
+                                <option>Director</option>
                             </select>
                         </div>
                     @endif

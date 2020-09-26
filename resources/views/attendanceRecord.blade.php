@@ -48,7 +48,7 @@
             </div>
 
 
-            <table class="table">
+            <table class="table attendance-table">
                 <thead>
                     <tr id="attendanceTable">
                         <th scope="col">Id</th>
