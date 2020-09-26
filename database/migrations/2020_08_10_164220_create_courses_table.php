@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->String('name');
             $table->Integer('id_classroom');
             $table->Integer('id_section')->nullable();
+            $table->Integer('id_training')->nullable();
         });
     }
 

@@ -70,4 +70,5 @@ img .role_icons {
 
 .attendance-table {
     table-layout: fixed;
+    width: 75%;
 }

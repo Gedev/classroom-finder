@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                     <form>
                         <div class="form-group">
-                            <label for="classroomSelect" class="font-weight-bold">Select your class</label>
+                            <label for="classroomSelect" class="font-weight-bold">Select the classroom</label>
                             <select class="custom-select" id="classroomSelect">
                                 <option selected>Select a classroom</option>
                                 @foreach ($classrooms as $classroom)
