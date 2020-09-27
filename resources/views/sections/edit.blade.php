@@ -28,8 +28,8 @@
                     </tr>
                     </thead>
                         <tr>
-                            <td>{{ $training->id }}</td>
-                            <td>{{ $training->name }}</td>
+                            <td>{{ $section->id }}</td>
+                            <td>{{ $section->name }}</td>
                         </tr>
                 </table>
             </div>

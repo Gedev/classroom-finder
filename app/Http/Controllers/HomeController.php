@@ -60,11 +60,13 @@ class HomeController extends Controller
     {
         $users = DB::table('users')->get();
         $classrooms = DB::table('classrooms')->get();
-        $training = DB::table('trainings')->get();
+        $sections = DB::table('sections')->get();
+        $courses = DB::table('courses')->get();
         return view('attendanceRecord', [
             'users'=>$users,
             'classrooms'=>$classrooms,
-            'trainings' => $training
+            'sections' => $sections,
+            'courses' => $courses,
         ]);
     }
 }

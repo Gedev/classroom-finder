@@ -21,9 +21,9 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <h5 class="card-title">Sections</h5>
+                        <h5 class="card-title">Categories</h5>
                         <p class="card-text text-info">TO DO</p>
-                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
+                        <a class="btn btn-primary" href="{{ Route('categories.index') }}">List of sections</a>
                     </div>
                 </div>
             </div>
@@ -77,9 +77,9 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <h5 class="card-title ">Trainings</h5>
+                            <h5 class="card-title ">Sections</h5>
                         <p class="card-text">List of all trainings</p>
-                        <a class="btn btn-primary" href="{{ Route('trainings.index') }}">List of trainings</a>
+                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of trainings</a>
                     </div>
                 </div>
             </div>

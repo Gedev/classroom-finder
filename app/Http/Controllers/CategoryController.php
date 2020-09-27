@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Section;
+use App\Category;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
-class TrainingController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class TrainingController extends Controller
      */
     public function index()
     {
-        return view('trainings.index',
-            ['trainings' => Section::all()]
+        return view('categories.index',
+            ['categories' => Category::all()]
         );
     }
 
@@ -59,12 +59,11 @@ class TrainingController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Application|Factory|Response|View
+     * @return Response
      */
     public function edit($id)
     {
-        $training = Section::find($id);
-        return view('trainings.edit', compact('training'));
+        //
     }
 
     /**
