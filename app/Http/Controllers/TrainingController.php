@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Training;
+use App\Section;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class TrainingController extends Controller
     public function index()
     {
         return view('trainings.index',
-            ['trainings' => Training::all()]
+            ['trainings' => Section::all()]
         );
     }
 
@@ -63,7 +63,7 @@ class TrainingController extends Controller
      */
     public function edit($id)
     {
-        $training = Training::find($id);
+        $training = Section::find($id);
         return view('trainings.edit', compact('training'));
     }
 

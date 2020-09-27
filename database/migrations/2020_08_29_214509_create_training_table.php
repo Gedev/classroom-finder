@@ -13,7 +13,7 @@ class CreateTrainingTable extends Migration
      */
     public function up()
     {
-        Schema::create('trainings', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->String('name');
@@ -27,6 +27,6 @@ class CreateTrainingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trainings');
+        Schema::dropIfExists('sections');
     }
 }
