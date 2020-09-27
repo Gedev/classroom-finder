@@ -19,7 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'role',
-        'training',
+        'section',
         'idCard',
         'password',
     ];

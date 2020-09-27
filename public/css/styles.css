@@ -72,3 +72,7 @@ img .role_icons {
     table-layout: fixed;
     width: 75%;
 }
+
+.ul-collapse {
+    margin-block-end: 0;
+}

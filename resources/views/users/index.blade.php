@@ -36,7 +36,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
-                    <th scope="col">Training</th>
+                    <th scope="col">Section</th>
                 </tr>
                 </thead>
 

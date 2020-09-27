@@ -7,6 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class SectionController extends Controller
@@ -18,8 +19,17 @@ class SectionController extends Controller
      */
     public function index()
     {
+        $courses = DB::table('courses')->get();
+        $webdevCourses = DB::table('courses')->where('id_training', '1')->get();
+        $bachelierInformatiqueGestionCourses = DB::table('courses')->where('id_training', '2')->get();
+
         return view('sections.index',
-            ['sections' => Section::all()]
+            [
+                'sections' => Section::all(),
+                'courses' => $courses,
+                'webdevCourses' => $webdevCourses,
+                'bachelierInformatiqueGestionCourses' => $bachelierInformatiqueGestionCourses,
+            ]
         );
     }
 
