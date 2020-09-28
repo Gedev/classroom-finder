@@ -4,7 +4,7 @@
 @endsection
 
 @section('realTimeFormValidation')
-    <div class="container">
+
         <div class="bodyContent justify-content-center">
 
             <div class="globalTitle alert-light">
@@ -68,7 +68,7 @@
                 <p id="result"></p>
             </div>
         </div>
-    </div>
+
 
 @endsection
 

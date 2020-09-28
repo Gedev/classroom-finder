@@ -1,11 +1,14 @@
 .bodyContent{
+    margin: auto;
     background-color: white;
     box-shadow: 7px 7px 5px #343a4040 !important;
     padding: 2%;
+    min-height: 80vh;
+    max-width: 100vh;
 }
 
 .bodyContent .card-body:hover {
-    background-color: rgba(0, 189, 145, .1);;
+    background-color: rgba(0, 189, 145, .1);
 }
 
 img .role_icons {
@@ -19,8 +22,9 @@ img .role_icons {
     background-color: rgba(255, 255, 255, 0);;
 }
 
-.globalTitle {
+.bodyContent .globalTitle {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .first-letter-title {
@@ -28,6 +32,7 @@ img .role_icons {
     color: #ff7802;
     font-size: 2.9em;
     background-color: white;
+    text-align: center;
 }
 
 .title {
@@ -35,6 +40,7 @@ img .role_icons {
     font-size: 2.0em;
     color: #ffffff;
     background-color: #ff7802;
+    text-align: center;
 }
 
 .justCreated {
@@ -53,13 +59,13 @@ img .role_icons {
     animation: fadeIn ease 0.8s;
 }
 
+.glowEffect {
+    animation: glow 2500ms ease-out infinite;
+}
+
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
-}
-
-.glowEffect {
-    animation: glow 2500ms ease-out infinite;
 }
 
 @keyframes glow {
