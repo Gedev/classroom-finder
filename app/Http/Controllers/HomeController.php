@@ -58,16 +58,20 @@ class HomeController extends Controller
 
     public function attendanceRecord()
     {
+        $userAuthenticated = Auth::user();
         $users = DB::table('users')->get();
         $classrooms = DB::table('classrooms')->get();
         $sections = DB::table('sections')->get();
-        $courses = DB::table('courses')->get();
+        $userCourses = DB::table('courses')
+            ->where('id_training', '=', $userAuthenticated->training)
+            ->get();
 
         return view('attendanceRecord', [
             'users'=>$users,
             'classrooms'=>$classrooms,
             'sections' => $sections,
-            'courses' => $courses,
+            'userCourses' => $userCourses,
+            'userAuthenticated' => $userAuthenticated,
         ]);
     }
 }

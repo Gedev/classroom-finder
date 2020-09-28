@@ -36,9 +36,9 @@
                             <label for="sectionSelect" class="font-weight-bold">Select the course</label>
                             <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
                                 <option selected>Select the course</option>
-                                @foreach ($courses as $course)
-                                    <option value="{{ $course->id }}">
-                                        {{ $course->id.". ".$course->name }}
+                                @foreach ($userCourses as $userCourse)
+                                    <option value="{{ $userCourse->id }}">
+                                        {{ $userCourse->id.". ".$userCourse->name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -46,8 +46,12 @@
                     </form>
                 </div>
             </div>
-
-
+            <div id="InputRFID">
+                <label for="message" class="font-weight-bold">Enter your identification code</label>
+                <input class="form-control" id="message" type="password" autocomplete="off" />
+                <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
+                <p id="result"></p>
+            </div>
             <table class="table attendance-table">
                 <thead>
                     <tr id="attendanceTable">
@@ -60,13 +64,6 @@
                 <tbody id="tableInsertAfterSelect">
                 </tbody >
             </table>
-
-            <div id="InputRFID">
-                <label for="message" class="font-weight-bold">Enter your identification code</label>
-                <input class="form-control" id="message" type="password" autocomplete="off" />
-                <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
-                <p id="result"></p>
-            </div>
         </div>
 
 
