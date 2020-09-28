@@ -76,9 +76,12 @@ img .role_icons {
 
 .attendance-table {
     table-layout: fixed;
-    width: 75%;
 }
 
 .ul-collapse {
     margin-block-end: 0;
+}
+
+.confirmClassroom {
+    text: bold;
 }

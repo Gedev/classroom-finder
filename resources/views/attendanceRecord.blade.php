@@ -18,7 +18,7 @@
                     <form>
                         <div class="form-group">
                             <label for="classroomSelect" class="font-weight-bold">Select the classroom</label>
-                            <select class="custom-select" id="classroomSelect">
+                            <select class="custom-select" id="classroomSelect" onChange="printClassroom(this.value);">
                                 <option selected>Select a classroom</option>
                                 @foreach ($classrooms as $classroom)
                                     <option value="{{ $classroom->id }}">
@@ -46,24 +46,50 @@
                     </form>
                 </div>
             </div>
-            <div id="InputRFID">
-                <label for="message" class="font-weight-bold">Enter your identification code</label>
-                <input class="form-control" id="message" type="password" autocomplete="off" />
-                <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
-                <p id="result"></p>
-            </div>
-            <table class="table attendance-table">
-                <thead>
-                    <tr id="attendanceTable">
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                    </tr>
-                </thead>
 
-                <tbody id="tableInsertAfterSelect">
-                </tbody >
-            </table>
+            <div id="confirmBeforeShowInput">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                    You are logged as : <span class="font-weight-bold">{{ Auth::user()->name }}</span>
+                            </h5>
+                            <p class="card-text">You are about to register students in the <span class="font-weight-bold">classroom</span>
+                                <span class="confirmClassroom"></span>
+                            </p>
+                            <p class="card-text">for the course
+                                <span class="confirmCourse"></span>
+                            </p>
+
+                            <p>
+                                <button type="button" class="btn btn-success" onclick="showInput();">I confirm</button>
+                            </p>
+
+                            <div id="InputRFID" class="fadeIn">
+                                <label for="message" class="font-weight-bold">Enter your identification code</label>
+                                <input class="form-control" id="message" type="password" autocomplete="off" />
+                                <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
+                                <p id="result"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <table class="table attendance-table">
+                    <thead>
+                        <tr id="attendanceTable">
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableInsertAfterSelect">
+                    </tbody >
+                </table>
+            </div>
         </div>
 
 
@@ -92,13 +118,26 @@
                         }
                     }
 
-                    console.log(response);
                     $('#tableInsertAfterSelect')
                         .html(myTable);
-
-                    showInput();
+                    showTable();
+                    console.log("value before printCourse : ", value);
+                    printCourse(value);
                 }
             });
         }
+
+        function printClassroom(value) {
+            $(".confirmClassroom")
+                .addClass("p-1 text-white bg-info")
+                .html(value);
+        }
+
+        function printCourse(value) {
+            $(".confirmCourse")
+                .addClass("p-1 text-white bg-info")
+                .html(value)
+        }
+
     </script>
 @endsection
