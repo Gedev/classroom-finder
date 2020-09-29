@@ -16,4 +16,13 @@ class Course extends Model
         'id_classroom',
         'id_section',
     ];
+
+    /**
+     * Each tag can have many links.
+     *
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

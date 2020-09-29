@@ -19,7 +19,11 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <h4>Classrooms</h4>
+                    <div class="globalTitle alert-light">
+                        <div class="first-letter-title">C</div>
+                        <div class="title">lassrooms</div>
+                    </div>
+
                     @if(Auth::user()->role == 'director')
                         <a href="{{ route('classrooms.create') }}" class="btn btn-success">(+) Add a classroom</a>
                     Add filter :

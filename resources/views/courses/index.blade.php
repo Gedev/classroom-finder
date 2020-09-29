@@ -5,7 +5,10 @@
 <div class="container">
     <div class="bodyContent row justify-content-center">
         <div class="col-md-8">
-            <h4>Courses</h4>
+            <div class="globalTitle alert-light">
+                <div class="first-letter-title">C</div>
+                <div class="title">ourses</div>
+            </div>
 
             <table class="table">
                 <thead>
