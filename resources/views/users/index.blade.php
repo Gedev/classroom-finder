@@ -14,7 +14,7 @@
 </nav>
 <div class="container">
     <div class="bodyContent row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             @if (session()->has('success'))
                 <div class="alert alert-success" role="alert">
                     {{ session()->get('success') }}

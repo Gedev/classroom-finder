@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="bodyContent row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <p>
-            <div class="alert-light">
+            <div class="globalTitle alert-light">
                 <div class="first-letter-title">H</div>
                 <div class="title">omepage</div>
             </div>

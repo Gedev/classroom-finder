@@ -61,9 +61,11 @@
                                 <span class="confirmCourse"></span>
                             </p>
 
+
                             <p>
                                 <button type="button" class="btn btn-success" onclick="showInput();">I confirm</button>
                             </p>
+
 
                             <div id="InputRFID" class="fadeIn">
                                 <label for="message" class="font-weight-bold">Enter your identification code</label>
@@ -128,9 +130,15 @@
         }
 
         function printClassroom(value) {
+            if(!isNaN(value)){
             $(".confirmClassroom")
                 .addClass("p-1 text-white bg-info")
                 .html(value);
+            } else {
+                $(".confirmClassroom")
+                    .removeClass("p-1 text-white bg-info")
+                    .html("");
+            }
         }
 
         function printCourse(value) {
