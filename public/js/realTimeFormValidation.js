@@ -8,12 +8,10 @@ message.addEventListener('input', function () {
 
     if(resultCode === "àé§è&§\"§éç" && resultCode.length === 10) {
         let colorbg = $( "body" ).css( "background-color" );
-        console.log(colorbg);
         $("#result")
             .removeClass("text-danger")
             .addClass("text-success")
             .html("Successful check-in !");
-
 
         $(".Professeur")
             .css({"background-color": colorbg,

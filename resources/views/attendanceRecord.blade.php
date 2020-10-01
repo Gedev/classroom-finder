@@ -18,8 +18,7 @@
                     <form>
                         <div class="form-group">
                             <label for="classroomSelect" class="font-weight-bold">Select the classroom</label>
-                            <select class="custom-select" id="classroomSelect" onChange="printClassroom(this.value);">
-                                <option selected>Select a classroom</option>
+                            <select class="custom-select classroomSelect" id="classroomSelect" onChange="printClassroom(this.value);">
                                 @foreach ($classrooms as $classroom)
                                     <option value="{{ $classroom->id }}">
                                         {{ $classroom->id }}
@@ -31,11 +30,11 @@
                 </div>
 
                 <div class="col-md-6">
-                    <form>
+                    <form id="courseFormSelect">
                         <div class="form-group">
-                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>
-                            <select class="custom-select" id="sectionSelect" onChange="consoleLogDebug(this.value);">
-                                <option selected>Select the course</option>
+                            <label for="courseSelect" class="font-weight-bold">Select the course</label>
+                            <select class="custom-select courseSelect" id="courseSelect" onChange="consoleLogDebug(this.value);">
+                                <option value="" selected disabled hidden></option>
                                 @foreach ($userCourses as $userCourse)
                                     <option value="{{ $userCourse->id }}">
                                         {{ $userCourse->id.". ".$userCourse->name }}
@@ -55,19 +54,14 @@
                                     You are logged as : <span class="font-weight-bold">{{ Auth::user()->name }}</span>
                             </h5>
                             <p class="card-text">You are about to register students in the <span class="font-weight-bold">classroom</span>
-                                <span class="confirmClassroom"></span>
+                                <span class="confirmClassroom"></span> for the course <span class="confirmCourse"></span>
                             </p>
-                            <p class="card-text">for the course
-                                <span class="confirmCourse"></span>
-                            </p>
-
 
                             <p>
-                                <button type="button" class="btn btn-success" onclick="showInput();">I confirm</button>
+                                <button id="confirmAttendanceButton" type="button" class="btn btn-success" onclick="showInput();">Confirm</button>
                             </p>
 
-
-                            <div id="InputRFID" class="fadeIn">
+                            <div id="InputRFID" class="col-sm-4 fadeIn">
                                 <label for="message" class="font-weight-bold">Enter your identification code</label>
                                 <input class="form-control" id="message" type="password" autocomplete="off" />
                                 <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
@@ -134,17 +128,43 @@
             $(".confirmClassroom")
                 .addClass("p-1 text-white bg-info")
                 .html(value);
+                showCourseFormSelect();
             } else {
                 $(".confirmClassroom")
                     .removeClass("p-1 text-white bg-info")
                     .html("");
             }
+
+            let course = $("select.courseSelect").children("option:selected").val();
+            let classroom = $("select.classroomSelect").children("option:selected").val();
+            console.log("classroom : ", classroom);
+            console.log("course : ", course);
+            if(!isNaN(course) && !isNaN(classroom)) {
+                showButton();
+            }
         }
 
         function printCourse(value) {
-            $(".confirmCourse")
-                .addClass("p-1 text-white bg-info")
-                .html(value)
+
+            if(!isNaN(value)) {
+                $(".confirmCourse")
+                    .addClass("p-1 text-white bg-info")
+                    .html(value)
+            } else {
+                $(".confirmCourse")
+                    .removeClass("p-1 text-white bg-info")
+                    .html("");
+            }
+            let course = $("select.courseSelect").children("option:selected").val();
+            let classroom = $("select.classroomSelect").children("option:selected").val();
+
+            console.log("course :", course, "classroom : ", classroom);
+            if(!isNaN(course) && !isNaN(classroom)) {
+                $('#confirmBeforeShowInput')
+                    .addClass("fadeIn")
+                    .show();
+                showButton();
+            }
         }
 
     </script>

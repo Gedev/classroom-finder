@@ -85,3 +85,7 @@ img .role_icons {
 .confirmClassroom {
     text: bold;
 }
+
+#confirmAttendanceButton, #courseFormSelect, #confirmBeforeShowInput {
+    display: none;
+}
