@@ -11,6 +11,9 @@
                 <div class="first-letter-title">A</div>
                 <div class="title">ttendance</div>
             </div>
+            <h5>
+                You are logged as : <span class="font-weight-bold">{{ Auth::user()->name }}</span>
+            </h5>
             <hr>
 
             <div class="row">
@@ -48,26 +51,19 @@
 
             <div id="confirmBeforeShowInput">
                 <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                    You are logged as : <span class="font-weight-bold">{{ Auth::user()->name }}</span>
-                            </h5>
-                            <p class="card-text">You are about to register students in the <span class="font-weight-bold">classroom</span>
-                                <span class="confirmClassroom"></span> for the course <span class="confirmCourse"></span>
-                            </p>
+                    <p class="card-text">You are about to register students in the <span class="font-weight-bold">classroom</span>
+                        <span class="confirmClassroom"></span> for the course <span class="confirmCourse"></span>
+                    </p>
 
-                            <p>
-                                <button id="confirmAttendanceButton" type="button" class="btn btn-success" onclick="showInput();">Confirm</button>
-                            </p>
+                    <p>
+                        <button id="confirmAttendanceButton" type="button" class="btn btn-success" onclick="showInput();">Confirm</button>
+                    </p>
 
-                            <div id="InputRFID" class="col-sm-4 fadeIn">
-                                <label for="message" class="font-weight-bold">Enter your identification code</label>
-                                <input class="form-control" id="message" type="password" autocomplete="off" />
-                                <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
-                                <p id="result"></p>
-                            </div>
-                        </div>
+                    <div id="InputRFID" class="col-sm-4 fadeIn">
+                        <label for="message" class="font-weight-bold">Enter your identification code</label>
+                        <input class="form-control" id="message" type="password" autocomplete="off" />
+                        <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
+                        <p id="result"></p>
                     </div>
                 </div>
             </div>
