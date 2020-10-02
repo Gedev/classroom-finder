@@ -4,6 +4,10 @@ function showInput() {
     addListenerToInput();
     $("#courseSelect").attr("disabled", true);
     $("#classroomSelect").attr("disabled", true);
+    $("#confirmAttendanceButton")
+        .removeClass("btn-success")
+        .addClass("btn-secondary")
+        .attr("disabled", true);
 }
 
 function showTable() {
