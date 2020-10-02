@@ -115,7 +115,7 @@
                         @auth
                             <a href="{{ route('index') }}">Homepage</a>
                         @else
-                            <a href="{{ route('home') }}">Login</a>
+{{--                            <a href="{{ route('home') }}">Login</a>--}}
                         @endauth
                     @endif
                 </div>

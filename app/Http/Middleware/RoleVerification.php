@@ -19,7 +19,7 @@ class RoleVerification
         if ( Auth::check() && ((Auth()->user()->role === 'professor') || (Auth()->user()->role === 'director')) ) {
             return $next($request);
         } else {
-            return redirect()->route('welcome')->with('wrong_permission', 'You do not have sufficient permission');
+            return abort(404);
         }
     }
 }

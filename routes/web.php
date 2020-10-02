@@ -20,9 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@welcome')->name('welcome');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/index', 'HomeController@homepage')->name('index');
+Route::view('/welcome', 'welcome')->withoutMiddleware('auth');
+Route::get('/home', 'HomeController@homepage')->name('index');
 Route::get('/userAccount', 'HomeController@userAccount')->name('userAccount');
 
 Route::middleware('roleVerification')->group(function () {
@@ -31,11 +30,11 @@ Route::middleware('roleVerification')->group(function () {
     Route::get('/attendance', 'HomeController@attendanceRecord')
         ->name('attendanceRecord');
     Route::get('/getSection/{id}', 'AjaxController@index')->name('AjaxControllerIndex');
-    Route::resource('users', 'UserController');
-    Route::resource('classrooms', 'ClassroomController');
-    Route::resource('courses', 'CourseController');
-    Route::resource('sections', 'SectionController');
-    Route::resource('categories', 'CategoryController');
+    Route::resource('adminPanel/users', 'UserController');
+    Route::resource('adminPanel/classrooms', 'ClassroomController');
+    Route::resource('adminPanel/courses', 'CourseController');
+    Route::resource('adminPanel/sections', 'SectionController');
+    Route::resource('adminPanel/categories', 'CategoryController');
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
