@@ -98,6 +98,7 @@
 
                 success:function(response) {
                     var myTable = "";
+                    console.log("response :", response);
                     if(response === "")
                     {
                         myTable += "<tr class=\"text-danger glowEffect\"><td>No records</td></tr>";
