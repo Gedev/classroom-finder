@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Section;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -19,16 +20,10 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $courses = DB::table('courses')->get();
-        $webdevCourses = DB::table('courses')->where('id_training', '1')->get();
-        $bachelierInformatiqueGestionCourses = DB::table('courses')->where('id_training', '2')->get();
-
         return view('sections.index',
             [
                 'sections' => Section::all(),
-                'courses' => $courses,
-                'webdevCourses' => $webdevCourses,
-                'bachelierInformatiqueGestionCourses' => $bachelierInformatiqueGestionCourses,
+                'courses' => Course::all(),
             ]
         );
     }

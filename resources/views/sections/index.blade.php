@@ -13,7 +13,7 @@
     </nav>
     <div class="container">
         <div class="bodyContent row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -31,60 +31,21 @@
                         <th scope="col">Name</th>
                     </tr>
                     </thead>
+
                     @foreach ($sections as $section)
                         <tr>
                             <td>{{ $section->id }}</td>
                             <td>{{ $section->name }}
                                 <div class="collapse" id="collapse{{$section->id}}">
                                     <ul class="ul-collapse">
-                                @switch($section->id)
-                                    @case(1)
-                                        @foreach ($webdevCourses as $webdevCourse)
-                                            <li>
-                                                {{ $webdevCourse->name }}
-                                            </li>
+                                        @foreach ($courses as $course)
+                                            @if($course->id_training === $section->id)
+                                                <li>
+                                                    {{ $course->name }}
+                                                </li>
+                                            @endif
                                         @endforeach
-                                    @break
 
-                                    @case(2)
-                                        @foreach ($bachelierInformatiqueGestionCourses as $bachelierInformatiqueGestionCourse)
-                                            <li>
-                                                {{ $bachelierInformatiqueGestionCourse->name }}
-                                            </li>
-                                        @endforeach
-                                    @break
-
-                                    @case(3)
-                                        @foreach ($webdevCourses as $webdevCourse)
-                                            <li>
-                                                {{ $webdevCourse->name }}
-                                            </li>
-                                        @endforeach
-                                    @break
-
-                                    @case(4)
-                                        @foreach ($webdevCourses as $webdevCourse)
-                                            <li>
-                                                {{ $webdevCourse->name }}
-                                            </li>
-                                        @endforeach
-                                    @break
-
-                                    @case(5)
-                                        @foreach ($webdevCourses as $webdevCourse)
-                                            <li>
-                                                {{ $webdevCourse->name }}
-                                            </li>
-                                        @endforeach
-                                    @break
-                                    @case(6)
-                                        @foreach ($webdevCourses as $webdevCourse)
-                                            <li>
-                                                {{ $webdevCourse->name }}
-                                            </li>
-                                        @endforeach
-                                    @break
-                                @endswitch
                                     </ul>
                                 </div>
                             </td>
