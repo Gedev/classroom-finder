@@ -14,7 +14,7 @@ class AddTrainingToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('training')->nullable();
+            $table->integer('section_id')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddTrainingToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('training');
+            $table->dropColumn('section_id');
         });
     }
 }

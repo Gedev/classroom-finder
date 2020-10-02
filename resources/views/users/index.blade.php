@@ -59,7 +59,7 @@
                                     <i>NO ROLE ASSIGNED</i>
                                 </span></td>
                             @endif
-                            <td>{{ $user->training }}</td>
+                            <td>{{ $user->section_id }}</td>
                             <td>
                                 <a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
                             </td>

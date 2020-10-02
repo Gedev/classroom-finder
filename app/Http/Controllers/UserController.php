@@ -92,12 +92,12 @@ class UserController extends Controller
     {
         $users = User::find($id);
         $classrooms = DB::table('classrooms')->get();
-        $training = DB::table('trainings')->get();
+        $section = DB::table('sections')->get();
 
         return view('users.edit', [
             'user'=>$users,
             'classrooms'=>$classrooms,
-            'sections' => $training
+            'sections' => $section
         ]);
     }
 

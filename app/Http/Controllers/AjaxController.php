@@ -12,7 +12,7 @@ class AjaxController extends Controller
     public function index($id) {
         if (Request::ajax())
         {
-            $users = User::where('training', $id)->get();
+            $users = User::where('section', $id)->get();
             if (!($users->count()))
             {
                 \Log::info("EMPTY");

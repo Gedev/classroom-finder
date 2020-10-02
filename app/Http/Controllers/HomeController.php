@@ -54,7 +54,7 @@ class HomeController extends Controller
         $classrooms = DB::table('classrooms')->get();
         $sections = DB::table('sections')->get();
         $userCourses = DB::table('courses')
-            ->where('id_training', '=', $userAuthenticated->training)
+            ->where('section_id', '=', $userAuthenticated->section_id)
             ->get();
 
         return view('attendanceRecord', [

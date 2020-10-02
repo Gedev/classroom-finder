@@ -19,7 +19,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <h4>Trainings</h4>
+                <h4>Sections</h4>
                 <table class="table">
                     <thead>
                     <tr>

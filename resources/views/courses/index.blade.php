@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{  $course->id}}</td>
                         <td>{{  $course->name}}</td>
-                        <td>{{  $course->id_classroom}}</td>
+                        <td>{{  $course->classroom_id}}</td>
                         <td>
                             <a href="{{ route('courses.edit',$course->id)}}" class="btn btn-primary">Edit</a>
                         </td>

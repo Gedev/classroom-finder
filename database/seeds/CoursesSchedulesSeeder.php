@@ -15,7 +15,7 @@ class CoursesSchedulesSeeder extends Seeder
         DB::table('schedules')->insert([
             [
                 'id' => '1',
-                'id_classroom' => '100',
+                'classroom_id' => '100',
                 'section' => 'webdev',
                 'course_name' => 'english',
                 'start_at' => '09:00:00',

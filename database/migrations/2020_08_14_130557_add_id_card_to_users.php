@@ -14,7 +14,7 @@ class AddIdCardToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('idCard')->nullable();
+            $table->string('card_id')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddIdCardToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['idCard']);
+            $table->dropColumn(['card_id']);
         });
     }
 }

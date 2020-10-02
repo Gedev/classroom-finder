@@ -89,3 +89,7 @@ img .role_icons {
 #confirmAttendanceButton, #courseFormSelect, #confirmBeforeShowInput {
     display: none;
 }
+
+.list-sections {
+    background-color: transparent !important;
+}

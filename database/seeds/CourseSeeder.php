@@ -13,54 +13,104 @@ class CourseSeeder extends Seeder
     public function run()
     {
         DB::table('courses')->insert([
+            // WEB BLOC 1
             [
-                'id' => 1,
-                'name' => 'web1_AprocheDesign',
-                'id_classroom' => 104,
-                'id_training' => 1,
+                'name' => 'web1_baseReseaux',
+                'classroom_id' => 104,
+                'section_id' => 1,
             ],
             [
-                'id' => 7,
-                'name' => 'web1_SitesWebStatiques',
-                'id_classroom' => 103,
-                'id_training' => 1,
+                'name' => 'web1_environnementEtTechnologies',
+                'classroom_id' => 104,
+                'section_id' => 1,
             ],
             [
-                'id' => 2,
-                'name' => 'web2_scriptClients',
-                'id_classroom' => 102,
-                'id_training' => 1,
+                'name' => 'web1_SGBD',
+                'classroom_id' => 104,
+                'section_id' => 1,
             ],
             [
-                'id' => 3,
-                'name' => 'web2_web_dynamique',
-                'id_classroom' => 103,
-                'id_training' => 1,
+                'name' => 'web1_aprocheDesign',
+                'classroom_id' => 104,
+                'section_id' => 1,
             ],
             [
-                'id' => 4,
-                'name' => 'web2_framework_poo',
-                'id_classroom' => 104,
-                'id_training' => 1,
+                'name' => 'web1_sitesWebStatiques',
+                'classroom_id' => 103,
+                'section_id' => 1,
             ],
             [
-                'id' => 8,
-                'name' => 'web2_AprocheDesign',
-                'id_classroom' => 104,
-                'id_training' => 1,
+                'name' => 'web1_CMS_Niv1',
+                'classroom_id' => 103,
+                'section_id' => 1,
             ],
             [
-                'id' => 5,
+                'name' => 'web1_initProgrammation',
+                'classroom_id' => 103,
+                'section_id' => 1,
+            ],
+            [
+                'name' => 'web1_scriptServeur',
+                'classroom_id' => 103,
+                'section_id' => 1,
+            ],
+            [
                 'name' => 'web1_anglaisUE1',
-                'id_classroom' => 101,
-                'id_training' => 1,
+                'classroom_id' => 101,
+                'section_id' => 1,
+            ],
+            // WEB BLOC 2
+            [
+                'name' => 'web2_scriptClients',
+                'classroom_id' => 102,
+                'section_id' => 1,
             ],
             [
-                'id' => 6,
-                'name' => 'web1_anglaisUE2',
-                'id_classroom' => 101,
-                'id_training' => 1,
-            ]
+                'name' => 'web2_webDynamique',
+                'classroom_id' => 103,
+                'section_id' => 1,
+            ],
+            [
+                'name' => 'web2_frameworkPOO',
+                'classroom_id' => 104,
+                'section_id' => 1,
+            ],
+            [
+                'name' => 'web2_aprocheDesign',
+                'classroom_id' => 104,
+                'section_id' => 1,
+            ],
+            [
+                'name' => 'web2_anglaisUE2',
+                'classroom_id' => 101,
+                'section_id' => 1,
+            ],
+            // BACHELIER INFORMATIQUE DE GESTION BLOC 1
+            [
+                'name' => 'binfo1_anglaisUE1',
+                'classroom_id' => 101,
+                'section_id' => 2,
+            ],
+            [
+                'name' => 'binfo1_algorithm_programation',
+                'classroom_id' => 101,
+                'section_id' => 2,
+            ],
+            [
+                'name' => 'binfo1_webPrincipesDeBase',
+                'classroom_id' => 101,
+                'section_id' => 2,
+            ],
+            [
+                'name' => 'binfo1_technGestProjet',
+                'classroom_id' => 101,
+                'section_id' => 2,
+            ],
+            [
+                'name' => 'binfo1_principAnalyseInfo',
+                'classroom_id' => 101,
+                'section_id' => 2,
+            ],
         ]);
     }
 }

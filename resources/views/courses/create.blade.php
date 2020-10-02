@@ -20,8 +20,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_classroom">Can you specify the Id of the room where it will be teached ?*</label>
-                        <input type="number" class="form-control" name="id_classroom" id="id_classroom" placeholder="id_classroom">
+                        <label for="classroom_id">Can you specify the Id of the room where it will be teached ?*</label>
+                        <input type="number" class="form-control" name="classroom_id" id="classroom_id" placeholder="classroom_id">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

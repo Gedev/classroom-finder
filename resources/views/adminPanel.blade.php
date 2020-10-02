@@ -78,8 +78,8 @@
                             </div>
                         @endif
                             <h5 class="card-title ">Sections</h5>
-                        <p class="card-text">List of all trainings</p>
-                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of trainings</a>
+                        <p class="card-text">List of all sections</p>
+                        <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
                     </div>
                 </div>
             </div>

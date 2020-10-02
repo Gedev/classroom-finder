@@ -9,6 +9,6 @@ class Section extends Model
     protected $fillable = [
         'id',
         'name',
-        'id_category',
+        'category_id',
     ];
 }

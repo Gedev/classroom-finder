@@ -46,13 +46,13 @@ class CourseController extends Controller
         $request -> validate([
             'id' => 'required',
             'name' => 'required',
-            'id_classroom' => 'required',
+            'classroom_id' => 'required',
         ]);
 
         $course = new Course([
            'id' => $request->get('id'),
             'name' => $request->get('name'),
-            'id_classroom' => $request->get('id_classroom'),
+            'classroom_id' => $request->get('classroom_id'),
         ]);
 
         $course->save();
@@ -95,14 +95,14 @@ class CourseController extends Controller
         $request->validate([
             'id' => 'required',
             'name' => 'required',
-            'id_classroom' => 'required',
+            'classroom_id' => 'required',
         ]);
 
         $course = Course::find($id);
 
         $course->id = $request->get('id');
         $course->name = $request->get('name');
-        $course->id_classroom = $request->get('id_classroom');
+        $course->classroom_id = $request->get('classroom_id');
 
         $course->save();
 
