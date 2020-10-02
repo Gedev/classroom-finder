@@ -100,6 +100,11 @@
                 </div>
             @endif
 
+            @if (session('wrong_permission'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('wrong_permission') }}
+                </div>
+            @endif
             <div class="content">
                 <div class="title m-b-md">
                     Classroom Finder

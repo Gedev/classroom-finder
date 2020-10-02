@@ -1,6 +1,7 @@
 function showInput() {
     var x = document.getElementById("InputRFID");
     x.style.display = "block";
+    addListenerToInput();
     $("#courseSelect").attr("disabled", true);
     $("#classroomSelect").attr("disabled", true);
 }

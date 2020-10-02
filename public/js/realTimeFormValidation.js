@@ -3,28 +3,33 @@ let result = document.querySelector('#result');
 let resultCode = "";
 let testAnimation = $(".Professeur");
 
-message.addEventListener('input', function () {
-    resultCode = this.value;
+function addListenerToInput() {
+    message.addEventListener('input', function () {
+        resultCode = this.value;
 
-    if(resultCode === "àé§è&§\"§éç" && resultCode.length === 10) {
-        let colorbg = $( "body" ).css( "background-color" );
-        $("#result")
-            .removeClass("text-danger")
-            .addClass("text-success")
-            .html("Successful check-in !");
+        if(resultCode === "àé§è&§\"§éç" && resultCode.length === 10) {
+            let colorbg = $( "body" ).css( "background-color" );
+            $("#result")
+                .removeClass("text-danger")
+                .addClass("text-success")
+                .html("Successful check-in !");
 
-        $(".Professeur")
-            .css({"background-color": colorbg,
-                  "color": "white",
-                  "animation": "mymove 1s 1",
-                  "animation-fill-mode": "forwards"})
-    } else {
-        console.log('ResultCode is wrong')
-        $("#result")
-            .addClass("text-danger")
-            .html("No match found with this code.");
-    }
-});
+            $(".Professeur")
+                .css({"background-color": colorbg,
+                    "color": "white",
+                    "animation": "mymove 1s 1",
+                    "animation-fill-mode": "forwards"})
+        } else {
+            console.log('ResultCode is wrong')
+            $("#result")
+                .addClass("text-danger")
+                .html("No match found with this code.");
+        }
+    });
+}
+
+
+
 
 function deleteData(id) {
         var id = id;

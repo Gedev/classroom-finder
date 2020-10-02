@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'HomeController@homepage')->name('index');
 Route::get('/userAccount', 'HomeController@userAccount')->name('userAccount');
 
-Route::group(['middleware', ['roleVerification']], function () {
+Route::middleware('roleVerification')->group(function () {
     Route::get('/adminPanel', 'HomeController@adminPanel')
         ->name('adminPanel');
     Route::get('/attendance', 'HomeController@attendanceRecord')
@@ -39,7 +39,6 @@ Route::group(['middleware', ['roleVerification']], function () {
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
-
 });
 
 
