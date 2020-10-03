@@ -29,7 +29,7 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td>
-                                <a href="{{ route('classrooms.edit', $category->id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('categories.edit', $category->id)}}" class="btn btn-primary">Edit</a>
                             </td>
                         </tr>
                     @endforeach
