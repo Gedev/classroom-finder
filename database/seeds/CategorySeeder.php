@@ -21,6 +21,10 @@ class CategorySeeder extends Seeder
                 'id' => '2',
                 'name' => 'Informatique / Bureautique',
             ],
+            [
+                'id' => '3',
+                'name' => 'Langues',
+            ],
         ]);
     }
 }
