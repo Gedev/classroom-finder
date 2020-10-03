@@ -14,10 +14,10 @@ class SectionSeeder extends Seeder
     {
         DB::table('sections')->insert([
             [
-                'name' => 'Webdev_bloc1',
+                'name' => 'Webdev_1',
             ],
             [
-                'name' => 'Webdev_bloc2',
+                'name' => 'Webdev_2',
             ],
             [
                 'name' => 'Bachelier en informatique de gestion',
