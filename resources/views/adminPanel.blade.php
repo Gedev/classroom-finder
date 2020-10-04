@@ -22,8 +22,8 @@
                             </div>
                         @endif
                         <h5 class="card-title">Categories</h5>
-                        <p class="card-text text-info">TO DO</p>
-                        <a class="btn btn-primary" href="{{ Route('categories.index') }}">List of sections</a>
+                        <p class="card-text">List of categories</p>
+                        <a class="btn btn-primary" href="{{ Route('categories.index') }}">List of categories</a>
                     </div>
                 </div>
             </div>

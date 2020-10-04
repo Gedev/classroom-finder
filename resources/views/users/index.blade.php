@@ -21,7 +21,11 @@
                 </div>
             @endif
 
-            <h4>Users</h4>
+            <div class="globalTitle alert-light">
+                <div class="first-letter-title">U</div>
+                <div class="title">sers</div>
+            </div>
+
             @if(Auth::user()->role == 'director')
                 Add filter :
                 <a href="" class="btn btn-info">Id</a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Section;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -19,7 +20,10 @@ class CategoryController extends Controller
     public function index()
     {
         return view('categories.index',
-            ['categories' => Category::all()]
+            [
+                'categories' => Category::all(),
+                'sections' => Section::all(),
+            ]
         );
     }
 
