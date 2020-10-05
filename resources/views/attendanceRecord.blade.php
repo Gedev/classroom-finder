@@ -49,15 +49,11 @@
                 </div>
             </div>
 
-            <div id="confirmBeforeShowInput">
+            <div >
                 <div class="col-sm-12">
-                    <p class="card-text">You are about to register students in the <span class="font-weight-bold">classroom</span>
-                        <span class="confirmClassroom"></span> for the course <span class="confirmCourse"></span>
-                    </p>
-
-                    <p>
-                        <button id="confirmAttendanceButton" type="button" class="btn btn-success" onclick="showInput();">Confirm</button>
-                    </p>
+                    <div id="confirmBeforeShowInput">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmAttendanceModal">Confirm</button>
+                    </div>
 
                     <div id="InputRFID" class="col-sm-4 fadeIn">
                         <label for="message" class="font-weight-bold">Enter your identification code</label>
@@ -77,8 +73,10 @@
                 </div>
             </div>
 
-            <div class="col-sm-6">
-                <table class="table attendance-table">
+
+            <div class="col-sm-6 attendance-table">
+                <h4>List of users of the {{ $userCourse->name }}</h4>
+                <table class="table table-sm">
                     <thead>
                         <tr id="attendanceTable">
                             <th scope="col">Id</th>
@@ -91,7 +89,29 @@
                     </tbody >
                 </table>
             </div>
-        </div>
+
+
+            <!-- MODAL -->
+            <div class="modal fade" id="confirmAttendanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Do you confirm</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            You are about to register students in the classroom ... for the course ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" type="submit" onclick="showInput()" data-dismiss="modal">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- END MODAL --}}
 
 
 @endsection
