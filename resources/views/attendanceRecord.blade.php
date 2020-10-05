@@ -61,7 +61,16 @@
 
                     <div id="InputRFID" class="col-sm-4 fadeIn">
                         <label for="message" class="font-weight-bold">Enter your identification code</label>
-                        <input class="form-control" id="message" type="password" autocomplete="off" />
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <img src="/img/rfid.png" class="role_icons" alt="rfid_icon">
+                                </span>
+                            </div>
+                            <input class="form-control" id="message" type="password" autocomplete="off" />
+                        </div>
+
                         <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
                         <p id="result"></p>
                     </div>

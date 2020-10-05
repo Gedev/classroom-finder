@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('breadrumb')
+@section('breadcrumb')
 
 @endsection
 
@@ -19,11 +19,11 @@
                         {{ session('status') }}
                     </div>
                 @endif
-
                 <div class="globalTitle alert-light">
                     <div class="first-letter-title">S</div>
                     <div class="title">ections</div>
                 </div>
+
                 <table class="table table-hover">
                     <thead>
                         <tr>
