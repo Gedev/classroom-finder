@@ -105,8 +105,8 @@
                             You are about to register students in the classroom ... for the course ...
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" type="submit" onclick="showInput()" data-dismiss="modal">Confirm</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Let me change</button>
+                            <button class="btn btn-success" type="submit" onclick="showInput()" data-dismiss="modal">Confirm</button>
                         </div>
                     </div>
                 </div>
