@@ -55,8 +55,9 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmAttendanceModal">Confirm</button>
                     </div>
 
+                    <hr>
                     <div id="InputRFID" class="col-sm-4 fadeIn">
-                        <label for="message" class="font-weight-bold">Enter your identification code</label>
+                        <label for="rfidInput" class="font-weight-bold">Enter your identification code</label>
 
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -64,7 +65,7 @@
                                     <img src="/img/rfid.png" class="role_icons" alt="rfid_icon">
                                 </span>
                             </div>
-                            <input class="form-control" id="message" type="password" autocomplete="off" />
+                            <input class="form-control" id="rfidInput" type="password" autocomplete="off" />
                         </div>
 
                         <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
@@ -74,11 +75,11 @@
             </div>
 
 
-            <div class="col-sm-6 attendance-table">
-                <h4>List of users of the {{ $userCourse->name }}</h4>
+            <div id="attendanceTable" class="col-sm-6">
+                <label for="classroomSelect" class="font-weight-bold">List of users of the {{ $userCourses }}</label>
                 <table class="table table-sm">
                     <thead>
-                        <tr id="attendanceTable">
+                        <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>

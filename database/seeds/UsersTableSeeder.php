@@ -30,22 +30,6 @@ class UsersTableSeeder extends Seeder
                 'section_id' => rand(0, 6),
             ],
             [
-                'name' => 'student01',
-                'email' => 'student01@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student02',
-                'email' => 'student02@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
                 'name' => 'Professor',
                 'email' => 'professor@example.com',
                 'password' => bcrypt('prof_classfi'),
@@ -56,99 +40,26 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Director',
                 'email' => 'director@example.com',
-                'password' => bcrypt('directeur_classfi'),
+                'password' => bcrypt('director_classfi'),
                 'role' => 'director',
                 'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student03',
-                'email' => 'student03@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student04',
-                'email' => 'student04@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student05',
-                'email' => 'student05@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student06',
-                'email' => 'student06@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student07',
-                'email' => 'student07@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student08',
-                'email' => 'student08@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student09',
-                'email' => 'student09@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student10',
-                'email' => 'student10@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student11',
-                'email' => 'student11@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student12',
-                'email' => 'student12@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
-            [
-                'name' => 'student13',
-                'email' => 'student13@example.com',
-                'password' => bcrypt('student_classfi'),
-                'role' => 'student',
-                'card_id' => '',
-                'section_id' => rand(0, 6),
-            ],
+                'section_id' => 0,
+            ]
         ]);
+
+
+        // RANDOM DATA
+        for ($i=0; $i < 100; $i++) {
+            DB::table('users')->insert([
+                [
+                    'name' => 'student0'.($i+1),
+                    'email' => 'student'.($i+1).'@example.com',
+                    'password' => bcrypt('student_classfi'),
+                    'role' => 'student',
+                    'card_id' => '',
+                    'section_id' => rand(0, 7),
+                ]
+            ]);
+        }
     }
 }

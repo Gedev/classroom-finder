@@ -53,8 +53,8 @@ class HomeController extends Controller
         $users = DB::table('users')->get();
         $classrooms = DB::table('classrooms')->get();
         $sections = DB::table('sections')->get();
-        $userCourses = DB::table('courses')
-            ->where('section_id', '=', $userAuthenticated->section_id)
+        $userCourses = DB::table('sections')
+            ->where('id', '=', $userAuthenticated->section_id)
             ->get();
 
         return view('attendanceRecord', [

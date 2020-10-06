@@ -12,7 +12,7 @@ function showInput() {
 
 function showTable() {
     var y = document.getElementById("attendanceTable");
-    y.style.display = "table-row";
+    y.style.display = "block";
 }
 
 function showButton() {
