@@ -1,10 +1,10 @@
-let message = document.querySelector('#message');
+let rfidInput = document.querySelector('#rfidInput');
 let result = document.querySelector('#result');
 let resultCode = "";
 let testAnimation = $(".Professeur");
 
 function addListenerToInput() {
-    message.addEventListener('input', function () {
+    rfidInput.addEventListener('input', function () {
         resultCode = this.value;
 
         if(resultCode === "àé§è&§\"§éç" && resultCode.length === 10) {
