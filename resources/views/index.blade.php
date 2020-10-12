@@ -9,6 +9,12 @@
                 <div class="title">omepage</div>
             </div>
             </p>
+
+            @if( Auth::user()->role === 'professor' )
+            <label for="confirmPresence">Confirm your presence in the classroom :</label>
+            <button id="confirmPresence" class="btn-success">Confirm</button>
+            @endif
+            
             @php
                 $mytime = Carbon\Carbon::now();
                 $mytime->setTimezone('GMT+2');
