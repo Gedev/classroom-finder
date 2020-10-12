@@ -11,17 +11,16 @@
             </p>
 
             @if( Auth::user()->role === 'professor' )
-            <label for="confirmPresence">Confirm your presence in the classroom :</label>
-            <button id="confirmPresence" class="btn-success">Confirm</button>
+                <label for="confirmPresence">Confirm your presence in the classroom :</label>
+                <button id="confirmPresence" class="btn btn-success">Confirm</button>
             @endif
-            
-            @php
-                $mytime = Carbon\Carbon::now();
-                $mytime->setTimezone('GMT+2');
-                $currentDay = $mytime->isoFormat('d');
 
-                echo $mytime->locale('fr')->isoFormat('dddd, Do MMMM YYYY, HH:mm');
-            @endphp
+            <div class="float-right">
+                @php
+                    $today = actualDay();
+                    toFormatDate();
+                @endphp
+            </div>
 
             <table class="table table-bordered">
                 <thead>
@@ -43,8 +42,9 @@
                             @if($i == 4)
                                 <td class="table-dark"></td>
                             @else
-                            {{-- Get current day --}}
-                                @if($j == $currentDay)
+
+                            {{--Get current day--}}
+                                @if($j == $today)
                                     <td class="bg-info"></td>
                                 @else
                                     <td></td>
