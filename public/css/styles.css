@@ -97,3 +97,9 @@ img .role_icons {
 .list-sections {
     background-color: transparent !important;
 }
+
+/* Fix the shifting left issue */
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+

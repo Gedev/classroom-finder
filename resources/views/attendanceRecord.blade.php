@@ -75,7 +75,7 @@
             </div>
 
 
-            <div id="attendanceTable" class="col-sm-6">
+            <div id="attendanceTable" class="col-md-6">
                 <label for="classroomSelect" class="font-weight-bold">List of users of the {{ $userCourses }}</label>
                 <table class="table table-sm">
                     <thead>
