@@ -8,6 +8,7 @@ html {
     box-shadow: 7px 7px 5px #343a4040 !important;
     padding: 2%;
     min-height: 80vh;
+    min-width: 75%;
     max-width: 100vh;
 }
 
@@ -45,6 +46,10 @@ img .role_icons {
     color: #ffffff;
     background-color: #ff7802;
     text-align: center;
+}
+
+.adminPanel-card-title {
+    font-weight: bold;
 }
 
 .justCreated {

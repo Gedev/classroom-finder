@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+
     <div class="bodyContent justify-content-center">
         <div class="globalTitle alert-light">
             <div class="first-letter-title">A</div>
@@ -21,7 +21,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <h5 class="card-title">Categories</h5>
+                        <h5 class="card-title adminPanel-card-title">Categories</h5>
                         <p class="card-text">List of categories</p>
                         <a class="btn btn-primary" href="{{ Route('categories.index') }}">List of categories</a>
                     </div>
@@ -30,7 +30,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Users</h5>
+                        <h5 class="card-title adminPanel-card-title">Users</h5>
                         <p class="card-text">All users save in database. You can filter by Id, role, class, etc.</p>
                         <a class="btn btn-primary" href="{{ Route('users.index') }}">List of users</a>
                     </div>
@@ -47,7 +47,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <h5 class="card-title">Classrooms</h5>
+                            <h5 class="card-title adminPanel-card-title">Classrooms</h5>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a class="btn btn-primary" href="{{ Route('classrooms.index') }}">List of Classrooms</a>
                     </div>
@@ -61,7 +61,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <h5 class="card-title">Courses</h5>
+                        <h5 class="card-title adminPanel-card-title">Courses</h5>
                         <p class="card-text">List of the courses</p>
                         <a class="btn btn-primary" href="{{ Route('courses.index') }}">List of courses</a>
                     </div>
@@ -77,7 +77,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <h5 class="card-title ">Sections</h5>
+                            <h5 class="card-title adminPanel-card-title">Sections</h5>
                         <p class="card-text">List of all sections</p>
                         <a class="btn btn-primary" href="{{ Route('sections.index') }}">List of sections</a>
                     </div>
@@ -86,14 +86,12 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Permissions</h5>
+                        <h5 class="card-title adminPanel-card-title">Permissions</h5>
                         <p class="card-text text-info">TO DO</p>
                         <a class="btn btn-primary" href="{{ Route('permissions') }}">Permissions</a>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div> {{-- END CONTAINER --}}
-</div> {{-- END BODYCONTENT --}}
+    </div> {{-- END BODYCONTENT --}}
 @endsection
