@@ -22,9 +22,9 @@
                 @endphp
             </div>
 
-            <table class="table table-bordered">
+            <table class="table table-responsive-sm table-bordered">
                 <thead>
-                    <tr>
+                    <tr class="text-sm-center">
                         <th scope="col"></th>
                         <th scope="col">Lundi</th>
                         <th scope="col">Mardi</th>
@@ -35,9 +35,10 @@
                         <th scope="col">Dimanche</th>
                     </tr>
                 </thead>
+                {{-- Print all time --}}
                 @for($i = 0; $i < 10; $i++)
-                    <tr>
-                        <th>{{ $i+8 }}h-{{ $i+9 }}h</th>
+                    <tr class="text-sm-center">
+                        <th><div>{{ $i+8 }}h</div><div>{{ $i+9 }}h</div></th>
                         @for($j = 1; $j < 8; $j++)
                             @if($i == 4)
                                 <td class="table-dark"></td>
