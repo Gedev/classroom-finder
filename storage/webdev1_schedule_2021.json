@@ -2,7 +2,7 @@
     {
         "webdev_1" :
         {
-            "monday" : {
+            "1" : {
                 "monday": {"debut" : 540, "fin" : 775},
                 "tuesday": {"debut" : 540, "fin" : 775}
             }
@@ -10,16 +10,16 @@
 
         "webdev_2" :
         {
-            "tuesday" : {
+            "2" : {
                 "web2_scriptClients": {"debut" : 540, "fin" : 775}
             },
-            "wednesday" : {
+            "3" : {
                 "anglais" : {"debut" : 540, "fin" : 775}
             },
-            "thursday" : {
+            "4" : {
                 "framework_poo" : {"debut" : 540, "fin" : 775}
             },
-            "friday" : {
+            "5" : {
                 "web_dynamique" : {"debut" : 540, "fin" : 775}
             }
         },
