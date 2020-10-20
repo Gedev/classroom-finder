@@ -14,7 +14,7 @@
                 <label for="confirmPresence">Confirm your presence in the classroom :</label>
                 <button id="confirmPresence" class="btn btn-success">Confirm</button>
             @endif
-
+            {{ var_dump(minutesToHours($schedule[0]["webdev_2"]["wednesday"]["anglais"]["debut"])) }}
             <div class="float-right">
                 @php
                     $today = actualDay();
@@ -48,6 +48,9 @@
                                 @if($j == $today)
                                     <td class="bg-info"></td>
                                 @else
+                                    @if(isset($schedule[0]["webdev_2"]["wednesday"]["anglais"]["debut"]) && $schedule[0]["webdev_2"]["wednesday"] === $today))
+                                        <td class="bg-success">{{ $schedule[0]["webdev_2"]["wednesday"] }}</td>
+                                    @endif
                                     <td></td>
                                 @endif
                             @endif

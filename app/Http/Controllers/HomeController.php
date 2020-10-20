@@ -28,7 +28,15 @@ class HomeController extends Controller
     public function homepage()
     {
         $users = DB::table('users')->get();
-        return view('index', ['users'=>$users]);
+
+        $json = json_decode(file_get_contents(storage_path() . "\webdev1_schedule_2021.json"), true);
+
+        return view('index',
+            [
+                'users'=>$users,
+                'schedule'=>$json
+            ]
+        );
     }
 
     public function userAccount()

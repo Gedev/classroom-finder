@@ -1,0 +1,33 @@
+[
+    {
+        "webdev_1" :
+        {
+            "monday" : {
+                "monday": {"debut" : 540, "fin" : 775},
+                "tuesday": {"debut" : 540, "fin" : 775}
+            }
+        },
+
+        "webdev_2" :
+        {
+            "tuesday" : {
+                "web2_scriptClients": {"debut" : 540, "fin" : 775}
+            },
+            "wednesday" : {
+                "anglais" : {"debut" : 540, "fin" : 775}
+            },
+            "thursday" : {
+                "framework_poo" : {"debut" : 540, "fin" : 775}
+            },
+            "friday" : {
+                "web_dynamique" : {"debut" : 540, "fin" : 775}
+            }
+        },
+
+        "bach_ig" :
+        {
+            "enue1": "test",
+            "Test2": [0, 1, 2]
+        }
+    }
+]

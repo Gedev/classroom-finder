@@ -23,3 +23,14 @@ function actualDay() {
     return $today;
 }
 
+function minutesToHours($time) {
+    $hours = $time/60;
+    $minutes = $time%60;
+    if($minutes === 0){
+        $minutes = "00";
+    }
+    $time = $hours.'h'.$minutes;
+
+    return $time;
+}
+
