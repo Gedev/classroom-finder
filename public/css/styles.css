@@ -13,7 +13,7 @@ html {
 }
 
 .bodyContent .card-body:hover {
-    background-color: rgba(0, 189, 145, .1);
+    background-color: rgba(0, 189, 145, 0.1);
 }
 
 img .role_icons {
@@ -54,6 +54,10 @@ img .role_icons {
 
 .bg-orange {
     background-color: #f3b333;
+}
+
+.bg-pink {
+    background-color: #eaaeea;
 }
 
 .justCreated {
@@ -112,12 +116,19 @@ img .role_icons {
     padding-right: 0px !important;
 }
 
-.table {
-    border: 3px solid black;
-}
-
 .td-border-round {
     border-radius: 20px;
     border: 3px;
+}
+
+.schedule-table-td-filled {
+    transition: transform .2s;
     cursor: pointer;
+    padding-top: 20px !important;
+    vertical-align: center !important;
+}
+
+.schedule-table-td-filled:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
 }

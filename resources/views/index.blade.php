@@ -9,7 +9,7 @@
                 <div class="title">omepage</div>
             </div>
             </p>
-            <h5>Schedule for Section Web developer Bloc 2</h5>
+            <h5>Schedule for the section [ Web developer Bloc 2 ]</h5>
             @if( Auth::user()->role === 'professor' )
                 <label for="confirmPresence">Confirm your presence in the classroom :</label>
                 <button id="confirmPresence" class="btn btn-success">Confirm</button>
@@ -48,23 +48,23 @@
                                 @switch($j)
                                     @case(2)
                                         @if( array_key_exists($j, $schedule[0]["webdev_2"]))
-                                            <td class="bg-success td-border-round">{{ "ScriptClients" }}</td>
+                                            <td class="schedule-table-td-filled bg-success td-border-round">{{ "ScriptClients" }}</td>
                                         @endif
                                         @break
                                     @case(3)
                                         @if( array_key_exists($j, $schedule[0]["webdev_2"]))
-                                            <td class="bg-info td-border-round">{{ "Anglais" }}</td>
+                                            <td class="schedule-table-td-filled bg-pink td-border-round">{{ "Anglais" }}</td>
                                         @endif
                                         @break
 
                                     @case(4)
                                         @if( array_key_exists($j, $schedule[0]["webdev_2"]))
-                                            <td class="bg-info td-border-round">{{ "Framework_POO" }}</td>
+                                            <td class="schedule-table-td-filled bg-info td-border-round">{{ "Framework_POO" }}</td>
                                         @endif
                                         @break
                                     @case(5)
                                         @if( array_key_exists($j, $schedule[0]["webdev_2"]))
-                                            <td class="bg-orange td-border-round">{{ "Projet Web Dynamique" }}</td>
+                                            <td class="schedule-table-td-filled bg-orange td-border-round">{{ "Projet Web Dynamique" }}</td>
                                         @endif
                                         @break
                                     @default
