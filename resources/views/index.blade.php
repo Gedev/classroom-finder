@@ -9,7 +9,7 @@
                 <div class="title">omepage</div>
             </div>
             </p>
-
+            <h5>Schedule for Section Web developer Bloc 2</h5>
             @if( Auth::user()->role === 'professor' )
                 <label for="confirmPresence">Confirm your presence in the classroom :</label>
                 <button id="confirmPresence" class="btn btn-success">Confirm</button>
@@ -36,24 +36,46 @@
                     </tr>
                 </thead>
 
-                {{-- Print all time --}}
                 @for($i = 0; $i < 10; $i++)
                     <tr class="text-sm-center">
+                        {{-- Print the time --}}
                         <th><div>{{ $i+8 }}h</div><div>{{ $i+9 }}h</div></th>
                         @for($j = 1; $j < 8; $j++)
-                            @if($i == 4)
-                                <td class="table-dark"></td>
+
+                            @if($i===4)
+                                <td class="bg-dark"></td>
                             @else
+                                @switch($j)
+                                    @case(2)
+                                        @if( array_key_exists($j, $schedule[0]["webdev_2"]))
+                                            <td class="bg-success td-border-round">{{ "ScriptClients" }}</td>
+                                        @endif
+                                        @break
+                                    @case(3)
+                                        @if( array_key_exists($j, $schedule[0]["webdev_2"]))
+                                            <td class="bg-info td-border-round">{{ "Anglais" }}</td>
+                                        @endif
+                                        @break
 
-                            {{--Get current day--}}
+                                    @case(4)
+                                        @if( array_key_exists($j, $schedule[0]["webdev_2"]))
+                                            <td class="bg-info td-border-round">{{ "Framework_POO" }}</td>
+                                        @endif
+                                        @break
+                                    @case(5)
+                                        @if( array_key_exists($j, $schedule[0]["webdev_2"]))
+                                            <td class="bg-orange td-border-round">{{ "Projet Web Dynamique" }}</td>
+                                        @endif
+                                        @break
+                                    @default
+                                        <td class="border td-border-round"></td>
+                                @endswitch
 
-                                @if( array_key_exists("3", $schedule[0]["webdev_2"]) && $j == $today)
-                                    <td class="bg-success">{{ $schedule[0]["webdev_2"]["3"]["anglais"]["debut"] }}</td>
-                                @else
-                                    <td></td>
-                                @endif
                             @endif
                         @endfor
+
+
+
                     </tr>
                 @endfor
             </table>

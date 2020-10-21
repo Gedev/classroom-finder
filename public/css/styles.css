@@ -52,6 +52,10 @@ img .role_icons {
     font-weight: bold;
 }
 
+.bg-orange {
+    background-color: #f3b333;
+}
+
 .justCreated {
     background-color: #31d074;
 }
@@ -108,3 +112,12 @@ img .role_icons {
     padding-right: 0px !important;
 }
 
+.table {
+    border: 3px solid black;
+}
+
+.td-border-round {
+    border-radius: 20px;
+    border: 3px;
+    cursor: pointer;
+}
