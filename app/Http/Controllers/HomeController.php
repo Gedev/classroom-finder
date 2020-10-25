@@ -62,7 +62,7 @@ class HomeController extends Controller
         $users = DB::table('users')->get();
         $classrooms = DB::table('classrooms')->get();
         $sections = DB::table('sections')->get();
-        $userCourses = DB::table('sections')
+        $userSections = DB::table('sections')
             ->where('id', '=', $userAuthenticated->section_id)
             ->get();
 
@@ -70,7 +70,7 @@ class HomeController extends Controller
             'users'=>$users,
             'classrooms'=>$classrooms,
             'sections' => $sections,
-            'userCourses' => $userCourses,
+            'userSections' => $userSections,
             'userAuthenticated' => $userAuthenticated,
         ]);
     }
