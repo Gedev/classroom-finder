@@ -53,7 +53,7 @@ img .role_icons {
 }
 
 .bg-orange {
-    background-color: #f3b333;
+    background-color: #f3ce78;
 }
 
 .bg-pink {
@@ -119,6 +119,12 @@ img .role_icons {
 .td-border-round {
     border-radius: 20px;
     border: 3px;
+    width: 5%;
+}
+
+.schedule-table th {
+    width: 5%;
+    text-align: center;
 }
 
 .schedule-table-td-filled {
@@ -126,6 +132,7 @@ img .role_icons {
     cursor: pointer;
     padding-top: 20px !important;
     vertical-align: center !important;
+
 }
 
 .schedule-table-td-filled:hover {
