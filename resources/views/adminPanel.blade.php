@@ -31,7 +31,7 @@
                 <div class="card adminPanel-card">
                     <div class="card-body">
                         <h5 class="card-title adminPanel-card-title">Users</h5>
-                        <p class="card-text">All users save in database. You can filter by Id, role, class, etc.</p>
+                        <p class="card-text">All users saved in database. You can filter by Id, role, class, etc.</p>
                         <a class="btn btn-primary" href="{{ Route('users.index') }}">List of users</a>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             </div>
                         @endif
                             <h5 class="card-title adminPanel-card-title">Classrooms</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">List of classrooms. Show if equipment (whiteboard, projector) is installed.</p>
                         <a class="btn btn-primary" href="{{ Route('classrooms.index') }}">List of Classrooms</a>
                     </div>
                 </div>
