@@ -14,7 +14,7 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         <h5 class="card-title adminPanel-card-title">Users</h5>
                         <p class="card-text">All users save in database. You can filter by Id, role, class, etc.</p>
@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -70,7 +70,7 @@
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card adminPanel-card">
                     <div class="card-body">
                         <h5 class="card-title adminPanel-card-title">Permissions</h5>
                         <p class="card-text text-info">TO DO</p>

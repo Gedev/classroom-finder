@@ -48,6 +48,10 @@ img .role_icons {
     text-align: center;
 }
 
+.adminPanel-card {
+    background-color: #fafefa;
+}
+
 .adminPanel-card-title {
     font-weight: bold;
 }
