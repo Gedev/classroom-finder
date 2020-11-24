@@ -1,0 +1,145 @@
+html {
+    overflow-y: scroll !important;
+}
+
+.bodyContent{
+    margin: auto;
+    background-color: white;
+    box-shadow: 7px 7px 5px #343a4040 !important;
+    padding: 2%;
+    min-height: 80vh;
+    min-width: 75%;
+    max-width: 100vh;
+}
+
+.bodyContent .card-body:hover {
+    background-color: rgba(0, 189, 145, 0.1);
+}
+
+img .role_icons {
+    width: 25px !important;
+}
+
+#attendanceRow {
+}
+
+.breadcrumb {
+    background-color: rgba(255, 255, 255, 0);;
+}
+
+.bodyContent .globalTitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.first-letter-title {
+    display: inline;
+    color: #BF365A;
+    font-size: 2.9em;
+    background-color: white;
+    text-align: center;
+}
+
+.title {
+    display: inline;
+    font-size: 2.0em;
+    color: #ffffff;
+    background-color: #BF365A;
+    text-align: center;
+}
+
+.adminPanel-card {
+    background-color: #fafefa;
+}
+
+.adminPanel-card-title {
+    font-weight: bold;
+}
+
+.bg-orange {
+    background-color: #f3ce78;
+}
+
+.bg-pink {
+    background-color: #eca6dd;
+}
+
+.justCreated {
+    background-color: #31d074;
+}
+
+#attendanceTable {
+    display: none;
+}
+
+#InputRFID {
+    display: none;
+}
+
+.fadeIn {
+    animation: fadeIn ease 0.8s;
+}
+
+.glowEffect {
+    animation: glow 2500ms ease-out infinite;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes glow {
+    40% {
+        text-shadow: 0 0 1px #db1414;
+    }
+}
+
+.attendance-table {
+    table-layout: fixed;
+}
+
+.ul-collapse {
+    margin-block-end: 0;
+}
+
+.confirmClassroom {
+    text: bold;
+}
+
+#confirmAttendanceButton, #courseFormSelect, #confirmBeforeShowInput {
+    display: none;
+}
+
+.list-sections {
+    background-color: transparent !important;
+}
+
+/* Fix the shifting left issue */
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+.td-border-round {
+    border-radius: 20px;
+    border: 3px;
+    width: 5%;
+}
+
+.schedule-table th {
+    width: 5%;
+    text-align: center;
+}
+
+.schedule-table-td-filled {
+    transition: transform .2s;
+    cursor: pointer;
+    padding-top: 20px !important;
+    vertical-align: center !important;
+
+}
+
+.schedule-table-td-filled:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
