@@ -48,21 +48,21 @@
                     </form>
                 </div>
 
-                <div class="col">
-                    <form>
-                        <div class="form-group">
-                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>
-                            <select class="custom-select sectionSelect" id="sectionSelect">
-                                <option value=""></option>
-                                @foreach ($userSections as $userSection)
-                                    <option value="{{ $userSection->id }}">
-                                        {{ $userSection->id.". ".$userSection->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </form>
-                </div>
+{{--                <div class="col">--}}
+{{--                    <form>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>--}}
+{{--                            <select class="custom-select sectionSelect" id="sectionSelect">--}}
+{{--                                <option value=""></option>--}}
+{{--                                @foreach ($userSections as $userSection)--}}
+{{--                                    <option value="{{ $userSection->id }}">--}}
+{{--                                        {{ $userSection->id.". ".$userSection->name }}--}}
+{{--                                    </option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
             </div>
 
             <div >

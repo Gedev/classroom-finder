@@ -83,15 +83,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card adminPanel-card">
-                    <div class="card-body">
-                        <h5 class="card-title adminPanel-card-title">Permissions</h5>
-                        <p class="card-text text-info">TO DO</p>
-                        <a class="btn btn-primary" href="{{ Route('permissions') }}">Permissions</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div> {{-- END BODYCONTENT --}}
 @endsection

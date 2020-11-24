@@ -23,6 +23,11 @@
                     <label for="classroom_id">Classroom Id associated</label>
                     <input type="text" class="form-control" name="classroom_id" id="classroom_id" value="{{ $course->classroom_id }}" autocomplete="off">
                 </div>
+
+                <div class="form-group">
+                    <label for="section_id">Section Id associated</label>
+                    <input type="text" class="form-control" name="section_id" id="section_id" value="{{ $course->section_id }}" autocomplete="off">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
