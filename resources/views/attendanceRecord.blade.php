@@ -17,7 +17,7 @@
             <hr>
 
             <div class="row">
-                <div class="col">
+                <div class="col-sm-4">
                     <form>
                         <div class="form-group">
                             <label for="classroomSelect" class="font-weight-bold">Select the classroom</label>
@@ -32,11 +32,11 @@
                     </form>
                 </div>
 
-                <div class="col">
+                <div class="col-sm-4">
                     <form id="courseFormSelect">
                         <div class="form-group">
                             <label for="courseSelect" class="font-weight-bold">Select the section</label>
-                            <select class="custom-select courseSelect" id="courseSelect" onChange="consoleLogDebug(this.value);">
+                            <select class="custom-select courseSelect" id="courseSelect" onChange="show_course_input(this.value);">
                                 <option value="" selected disabled hidden></option>
                                 @foreach ($userSections as $userSection)
                                     <option value="{{ $userSection->id }}">
@@ -48,31 +48,31 @@
                     </form>
                 </div>
 
-{{--                <div class="col">--}}
-{{--                    <form>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>--}}
-{{--                            <select class="custom-select sectionSelect" id="sectionSelect">--}}
-{{--                                <option value=""></option>--}}
-{{--                                @foreach ($userSections as $userSection)--}}
-{{--                                    <option value="{{ $userSection->id }}">--}}
-{{--                                        {{ $userSection->id.". ".$userSection->name }}--}}
-{{--                                    </option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
+                <div class="col-sm-4" id="courseInput">
+                    <form>
+                        <div class="form-group">
+                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>
+                            <select class="custom-select sectionSelect" id="selectCourse" onChange="consoleLogDebug()">
+                            </select>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <div >
-                <div class="col-sm-12">
-                    <div id="confirmBeforeShowInput">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmAttendanceModal">Confirm</button>
-                    </div>
+            <div class="row">
 
-                    <hr>
-                    <div id="InputRFID" class="col-sm-4 fadeIn">
+            <div class="col-md-12">
+                <div id="confirmBeforeShowInput">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmAttendanceModal">Confirm</button>
+                </div>
+            <hr>
+
+            </div>
+
+                <div class="col-md-4 col-xs-4 fadeIn" id="InputRFID">
+                    
+
+                  
                         <label for="rfidInput" class="font-weight-bold">Enter your identification code</label>
 
                         <div class="input-group">
@@ -86,7 +86,22 @@
 
                         <small class="form-text text-muted">Please use your card with the reader to register your presence.</small>
                         <p id="result"></p>
-                    </div>
+                   
+                </div>
+
+                <div class="col-md-3 col-xs-3 fadeIn" id="InputTime">
+                        <label for="any" class="font-weight-bold">Enter time</label>
+                        
+                        <div class="input-group">
+                            <select class="form-control" id="hours" onChange="dateTimeCheck()">
+                                <option value="">HH</option>
+                            </select>
+                                <span class="colon">:</span>
+                            <select class="form-control" id="minutes" onChange="dateTimeCheck()">
+                                <option value="">MM</option>
+                            </select>
+                        </div>
+                        <p id="timeResponse"></p>
                 </div>
             </div>
 
@@ -133,7 +148,33 @@
 
 @section('scripts')
     <script>
-        function consoleLogDebug(value) {
+
+        function show_course_input(value)
+        {
+            
+            var x = document.getElementById("courseInput");
+            x.style.display = "block";
+            console.log("section Id: " + value);
+            var csrf = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            url: '/section/courses',
+            type: 'POST',
+            data: {'section_id': value, '_token': csrf},
+            dataType: 'json',
+        
+            success: function( data ) {
+                for(var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                    $("#selectCourse").append(`
+                        <option value="`+ obj.id + `">` + obj.name + `</option>
+                    `);
+                }
+        
+            }       
+        });
+        }
+        function consoleLogDebug() {
+            var value = $("#courseSelect").val();
             $.ajax({
                 type:'GET',
                 url: 'getSection/'+value,
@@ -207,6 +248,22 @@
                 showButton();
             }
         }
+
+        $(document).ready(function(){
+            var hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'];
+            var minutes = ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60'];
+
+            for(i = 0; i < hours.length; i++)
+            $("#hours").append(`
+                <option value="`+ hours[i] +`">`+ hours[i] +`</option>
+            `)
+
+            for(i = 0; i < minutes.length; i++)
+            $("#minutes").append(`
+                <option value="`+ minutes[i] +`">`+ minutes[i] + `</option>
+            `)
+
+        })
 
     </script>
 @endsection

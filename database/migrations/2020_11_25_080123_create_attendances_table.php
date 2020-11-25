@@ -17,6 +17,11 @@ class CreateAttendancesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('course_id')->index();
+            $table->foreign('course_id')->references('id')->on('courses');
+            $table->unsignedBigInteger('section_id')->index();
+            $table->foreign('section_id')->references('id')->on('sections');
+            $table->time("class_time");
             $table->timestamps();
         });
     }

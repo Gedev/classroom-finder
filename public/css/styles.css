@@ -75,6 +75,18 @@ img .role_icons {
 #InputRFID {
     display: none;
 }
+.colon{
+    font-size: 21px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#InputTime{
+    display: none;
+}
+
+#courseInput{
+    display: none;
+}
 
 .fadeIn {
     animation: fadeIn ease 0.8s;

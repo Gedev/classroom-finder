@@ -29,7 +29,8 @@ Route::middleware('roleVerification')->group(function () {
         ->name('adminPanel');
     Route::get('/attendance', 'HomeController@attendanceRecord')
         ->name('attendanceRecord');
-    Route::post('make-attendance','AttendanceController@makeAttendance');
+    Route::post('attendance/create','AttendanceController@store');
+    Route::get('attendance/show/{id}','AttendanceController@show')->name("attendance.show");
     Route::get('/getSection/{id}', 'AjaxController@index')->name('AjaxControllerIndex');
     Route::resource('adminPanel/users', 'UserController');
     Route::resource('adminPanel/classrooms', 'ClassroomController');
@@ -39,6 +40,8 @@ Route::middleware('roleVerification')->group(function () {
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
+
+    Route::post('section/courses','CourseController@getCoursesAgainstSection');
 });
 
 

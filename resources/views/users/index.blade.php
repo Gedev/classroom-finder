@@ -41,6 +41,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
                     <th scope="col">Section</th>
+                    <th scope="col">Attendance</th>
                 </tr>
                 </thead>
 
@@ -64,6 +65,7 @@
                                 </span></td>
                             @endif
                             <td>{{ $user->section_id }}</td>
+                            <td style="text-align:center"><a href="{{ route('attendance.show',$user->id)}}"><i class="fa fa-eye" style="font-size:13px"></i></a></td>
                             <td>
                                 <a href="{{ route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
                             </td>
