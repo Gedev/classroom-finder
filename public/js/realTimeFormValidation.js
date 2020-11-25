@@ -4,8 +4,29 @@ let resultCode = "";
 let testAnimation = $(".Professeur");
 
 function addListenerToInput() {
+ 
     rfidInput.addEventListener('input', function () {
+
         resultCode = this.value;
+        if(resultCode.length < 10 )
+        {
+            return;
+        }
+        var csrf = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            url: '/make-attendance',
+            type: 'POST',
+            data: {'resultCode': resultCode, '_token': csrf},
+            dataType: 'json',
+        
+            success: function( data ) {
+                console.log(data);
+        
+            }       
+        });
+        // console.log(resultCode);
+
+        return;
 
         if(resultCode === "àé§è&§\"§éç" && resultCode.length === 10) {
             let colorbg = $( "body" ).css( "background-color" );
@@ -20,7 +41,7 @@ function addListenerToInput() {
                     "animation": "mymove 1s 1",
                     "animation-fill-mode": "forwards"})
         } else {
-            console.log('ResultCode is wrong')
+            // console.log('ResultCode is wrong')
             $("#result")
                 .addClass("text-danger")
                 .html("No match found with this code.");

@@ -29,6 +29,7 @@ Route::middleware('roleVerification')->group(function () {
         ->name('adminPanel');
     Route::get('/attendance', 'HomeController@attendanceRecord')
         ->name('attendanceRecord');
+    Route::post('make-attendance','AttendanceController@makeAttendance');
     Route::get('/getSection/{id}', 'AjaxController@index')->name('AjaxControllerIndex');
     Route::resource('adminPanel/users', 'UserController');
     Route::resource('adminPanel/classrooms', 'ClassroomController');
