@@ -36,7 +36,7 @@
                     <form id="courseFormSelect">
                         <div class="form-group">
                             <label for="courseSelect" class="font-weight-bold">Select the section</label>
-                            <select class="custom-select courseSelect" id="courseSelect" onChange="consoleLogDebug(this.value);">
+                            <select class="custom-select courseSelect" id="courseSelect" onChange="">
                                 <option value="" selected disabled hidden></option>
                                 @foreach ($userSections as $userSection)
                                     <option value="{{ $userSection->id }}">
@@ -47,22 +47,21 @@
                         </div>
                     </form>
                 </div>
-
-{{--                <div class="col">--}}
-{{--                    <form>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="sectionSelect" class="font-weight-bold">Select the course</label>--}}
-{{--                            <select class="custom-select sectionSelect" id="sectionSelect">--}}
-{{--                                <option value=""></option>--}}
-{{--                                @foreach ($userSections as $userSection)--}}
-{{--                                    <option value="{{ $userSection->id }}">--}}
-{{--                                        {{ $userSection->id.". ".$userSection->name }}--}}
-{{--                                    </option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
+                <div class="col">
+                    <form id="sectionFormSelect">
+                        <div class="form-group">
+                            <label for="courseSelect" class="font-weight-bold">Select the course</label>
+                            <select class="custom-select courseSelect" id="sectionSelect" onChange="consoleLogDebug(this.value);">
+                                <option value="" selected disabled hidden></option>
+                                @foreach ($userCourses as $userCourse)
+                                    <option value="{{ $userCourse->id }}">
+                                        {{ $userCourse->id.". ".$userCourse->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <div >
@@ -91,7 +90,7 @@
             </div>
 
             <div id="attendanceTable" class="col-md-6">
-                <label for="classroomSelect" class="font-weight-bold">List of users of the {{ $userSections }}</label>
+                <label for="classroomSelect" class="font-weight-bold">List of users</label>
                 <table class="table table-sm">
                     <thead>
                         <tr>

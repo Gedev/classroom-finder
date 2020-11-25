@@ -66,12 +66,19 @@ class HomeController extends Controller
             ->where('id', '=', $userAuthenticated->section_id)
             ->get();
 
+        // Get the ID of the section's user in the Collection
+        $userSection = $userSections->first();
+        $userCourses = DB::table('courses')
+            ->where('section_id', '=', $userSection->id)
+            ->get();
+
         return view('attendanceRecord', [
             'users'=>$users,
             'classrooms'=>$classrooms,
             'sections' => $sections,
             'userSections' => $userSections,
             'userAuthenticated' => $userAuthenticated,
+            'userCourses' => $userCourses
         ]);
     }
 }

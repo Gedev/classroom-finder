@@ -24,3 +24,9 @@ function showCourseFormSelect() {
         .show()
         .addClass("fadeIn");
 }
+
+function showSectionFormSelect() {
+    $('#courseFormSelect')
+        .show()
+        .addClass("fadeIn");
+}

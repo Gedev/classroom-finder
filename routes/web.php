@@ -38,6 +38,7 @@ Route::middleware('roleVerification')->group(function () {
     Route::get('send-mail','MailSend@mailsend');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
+    Route::post('make-attendance','AttendanceController@makeAttendance');
 });
 
 
