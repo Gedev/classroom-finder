@@ -10,6 +10,7 @@ use App\Course;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
+use App\Schedule;
 
 class CourseController extends Controller
 {
@@ -134,5 +135,18 @@ class CourseController extends Controller
             // do task when error
              echo $e->getMessage();
           }
+    }
+
+    public function get_course_day_schedules(Request $request)
+    {
+        $schedules = Schedule::where('course_id',$request->course_id)->get();
+        return response(["schedules" => $schedules],200);
+    }
+
+    public function get_course_time_schedules(Request $request)
+    {
+        $schedules = Schedule::where('course_id',$request->course_id)
+        ->where('day',$request->day)->get();
+        return response(["schedules" => $schedules],200);
     }
 }

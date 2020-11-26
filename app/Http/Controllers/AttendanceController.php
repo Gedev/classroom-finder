@@ -45,4 +45,10 @@ class AttendanceController extends Controller
         $attendances = Attendance::where('user_id',$id)->with(['course','section','user'])->get();
         return view('users.attendanceReport')->with('attendances',$attendances);
     }
+
+    public function mark_attendance($id)
+    {
+        return $id;
+    }
+
 }

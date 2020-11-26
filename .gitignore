@@ -1,0 +1,3 @@
+vendor/composer/autoload_static.php
+vendor/composer/autoload_classmap.php
+vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php

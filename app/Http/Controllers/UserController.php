@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Course;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Facades\Validator;
+use App\CourseUser;
 
 class UserController extends Controller
 {
@@ -159,6 +162,53 @@ class UserController extends Controller
         return view('users.index', [
             'users' => $users
         ]);
+    }
+
+    public function user_course_create()
+    {
+        $courses = Course::all();
+        return view('users.courses.create',compact('courses'));
+    }
+
+    public function user_course_store(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'course' => 'required',
+            'day' => 'required',
+            'time' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return response($validator->messages(), 422);
+        }
+        $course_id = $request->course;
+        $day = $request->day;
+        $time = explode("-", $request->time);
+        $start_at = $time[0];
+        $end_at = $time[1];
+        $user_id = $request->user_id;
+
+        $is_already_registered = CourseUser::where('day',$day)
+        ->where('start_at','<=',$start_at)
+        ->where('end_at','>=',$end_at)
+        ->exists();
+
+        if($is_already_registered)
+        {
+            return response(["message"=> "You have already registered course in this day and time."], 409);
+        }
+
+        CourseUser::create([
+            'course_id' => $course_id,
+            'day' => $day,
+            'start_at' => $start_at,
+            'end_at' => $end_at,
+            'user_id' => $user_id
+        ]);
+
+        return response(["message"=> "Course is registered successfully"], 201);
+
     }
 }
 

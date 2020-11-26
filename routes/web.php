@@ -32,12 +32,18 @@ Route::middleware('roleVerification')->group(function () {
     Route::post('attendance/create','AttendanceController@store');
     Route::get('attendance/show/{id}','AttendanceController@show')->name("attendance.show");
     Route::get('/getSection/{id}', 'AjaxController@index')->name('AjaxControllerIndex');
+    Route::get('/attendance/mark/{id}', 'HomeController@mark_attendance')->name('mark_attendance');
     Route::resource('adminPanel/users', 'UserController');
     Route::resource('adminPanel/classrooms', 'ClassroomController');
     Route::resource('adminPanel/courses', 'CourseController');
     Route::resource('adminPanel/sections', 'SectionController');
     Route::resource('adminPanel/categories', 'CategoryController');
     Route::get('send-mail','MailSend@mailsend');
+    Route::post('get-course-day-schedule','CourseController@get_course_day_schedules')->name('course.day.schedules');
+    Route::post('get-course-time-schedule','CourseController@get_course_time_schedules')->name('course.time.schedules');
+    Route::post('user/course/store','UserController@user_course_store')->name('user.course.store');
+    Route::get('user/course/create','UserController@user_course_create')
+    ->name('user.course.create');
     Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
         ->name('permissions');
 
