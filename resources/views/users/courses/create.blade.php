@@ -19,7 +19,28 @@
                         <p id="courseResult"></p>
                     </div>
 
-                    <div class="form-group">
+                    <h5>Select the courses</h5>
+
+                    <div class="container courses-container">
+                   
+
+                            <ul class="courses-checkbox-list">
+                                <li>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label courses-checkbox-label" for="exampleCheck1">Check me out</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                    <label class="form-check-label courses-checkbox-label" for="exampleCheck2">Check me out</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                    <label class="form-check-label courses-checkbox-label" for="exampleCheck3">Check me out</label>
+                                </li>
+                            </ul>
+                    </div>
+
+                    <!-- <div class="form-group">
                         <label for="day">Day*</label>
                         <select name="day" id="day" class="form-control" onChange="getTimeSchedule(this.value)">
                             <option value="select">Select day</option>
@@ -33,7 +54,7 @@
                             <option value="select">Select time</option>
                         </select>
                         <p id="timeResult"></p>
-                    </div>
+                    </div> -->
                     <input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
