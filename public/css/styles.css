@@ -155,3 +155,42 @@ img .role_icons {
     opacity: 0.9;
     transform: scale(1.1);
 }
+.courses-container{
+    border: 1px solid #DCDCDC;
+    padding: 0px;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+    height:150
+}
+
+.courses-checkbox-list{
+    padding: 0px !important;
+    height:150px;
+    overflow:auto;
+}
+.courses-checkbox-list > li
+{
+   
+    list-style-type: none;
+    padding: 7px 0px 7px 35px;
+    overflow: hidden;
+   
+}
+
+.courses-checkbox-list > li:not(:last-child)
+{
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.courses-checkbox-list > li:last-child
+{
+    padding-bottom: 0px;
+}
+.courses-checkbox-label{
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    color: rgba(0, 0, 0, 0.75);
+}
+.form-check-input{
+    position: relative;
+}

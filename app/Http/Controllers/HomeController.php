@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Helpers;
 use App\CourseUser;
 use App\Course;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -31,26 +32,41 @@ class HomeController extends Controller
     {
         $users = DB::table('users')->get();
         $json = json_decode(file_get_contents(storage_path() . "/webdev1_schedule_2021.json"), true);
-        $user = auth()->user()->id;
-        $schedule = CourseUser::where('user_id',$user)->with(['course'])->get();
-        // return print_r(json_decode($schedule));
-        $schedule = json_decode($schedule);
-        $classes = [];
-
+        $user_id = auth()->user()->id;
+        $user = User::where('id',$user_id)->with(['courses','courses.schedules'])->get()->toArray();
+        $courses = $user[0]['courses'];
         $days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
-        foreach($days as $day){
-            foreach($schedule as $key => $sc){
-                if($sc->day == $day)
-                {
-                    $classes[$day][$key]['day'] = $sc->day;
-                    $classes[$day][$key]['start_at'] = $sc->start_at;
-                    $classes[$day][$key]['end_at'] = $sc->end_at;
-                    $classes[$day][$key]['course_name'] = $sc->course->name;
-                    $classes[$day][$key]['course_id'] = $sc->course->id;
+        $days_counter = [
+            'monday' => 0,
+            'tuesday'=> 0,
+            'wednesday'=> 0,
+            'thursday' => 0,
+            'friday'=> 0,
+            'saturday'=>0,
+            'sunday'=>0
+        ];
+        $classes = [];
+        foreach($courses as $course)
+        {
+            if(!empty($course['schedules']))
+            {
+                foreach($days as $day){
+                    foreach($course['schedules'] as $key=> $schedule)
+                    {
+                        if($schedule['day'] == $day)
+                        {
+                            $classes[$day][$days_counter[$day]]['day'] = $schedule['day'];
+                            $classes[$day][$days_counter[$day]]['start_at'] = $schedule['start_at'];
+                            $classes[$day][$days_counter[$day]]['end_at'] = $schedule['end_at'];
+                            $classes[$day][$days_counter[$day]]['course_name'] = $course['name'];
+                            $classes[$day][$days_counter[$day]]['course_id'] = $course['id'];
+                            $days_counter[$day]++;
+                        }
+                    }
                 }
             }
         }
-        
+       
         return view('index')->with(
             [
                 'users'=>$users,

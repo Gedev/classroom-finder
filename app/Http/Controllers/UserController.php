@@ -16,6 +16,7 @@ use Illuminate\View\View;
 use Symfony\Component\Console\Input\Input;
 use Illuminate\Support\Facades\Validator;
 use App\CourseUser;
+use App\Section;
 
 class UserController extends Controller
 {
@@ -166,48 +167,26 @@ class UserController extends Controller
 
     public function user_course_create()
     {
-        $courses = Course::all();
-        return view('users.courses.create',compact('courses'));
+        $sections = Section::all();
+        return view('users.courses.create',compact('sections'));
     }
 
     public function user_course_store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'course' => 'required',
-            'day' => 'required',
-            'time' => 'required',
+            'courses' => 'required',
             'user_id' => 'required'
         ]);
 
         if($validator->fails()){
             return response($validator->messages(), 422);
         }
-        $course_id = $request->course;
-        $day = $request->day;
-        $time = explode("-", $request->time);
-        $start_at = $time[0];
-        $end_at = $time[1];
         $user_id = $request->user_id;
+        $courses = $request->courses;
+        $user = User::where('id',$user_id)->first();
+        $user->courses()->sync($courses);
 
-        $is_already_registered = CourseUser::where('day',$day)
-        ->where('start_at','<=',$start_at)
-        ->where('end_at','>=',$end_at)
-        ->exists();
-
-        if($is_already_registered)
-        {
-            return response(["message"=> "You have already registered course in this day and time."], 409);
-        }
-
-        CourseUser::create([
-            'course_id' => $course_id,
-            'day' => $day,
-            'start_at' => $start_at,
-            'end_at' => $end_at,
-            'user_id' => $user_id
-        ]);
-
-        return response(["message"=> "Course is registered successfully"], 201);
+        return response(["message"=> "You have added the courses successfully."], 201);
 
     }
 }

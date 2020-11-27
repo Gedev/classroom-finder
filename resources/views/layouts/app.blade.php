@@ -41,9 +41,7 @@
                 </button>
 
                 <a class="nav-link" href="{{ route('index') }}">Homepage</a>
-                @if(Auth::user()->role=='professor')
                 <a class="nav-link" href="{{ route('user.course.create') }}">Register for the course</a>
-                @endif
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
