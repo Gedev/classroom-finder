@@ -49,8 +49,9 @@ function addListenerToInput() {
     });
 }
 
+function showCourseSelect() {
 
-
+}
 
 function deleteData(id) {
     var id = id;
@@ -74,4 +75,16 @@ function confirmDeleteUser() {
 function confirmDeleteCourse() {
     console.log("ConfirmDeleteCourse ??")
     document.getElementById("deleteCourseForm").submit();
+}
+
+function confirmDeleteAnnouncement() {
+    console.log("ConfirmDeleteAnnouncement ??")
+    document.getElementById("deleteAnnouncementForm").submit();
+}
+
+function deleteAnnouncement(id) {
+    var announcement_id = id;
+    var url = '{{ route("announcement.destroy", ":id") }}';
+    url = url.replace(':id', id);
+    $("#deleteAnnouncementForm").attr('action', url);
 }

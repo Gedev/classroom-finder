@@ -38,14 +38,16 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Delete the course</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Do you really want to delete this record? This process cannot be undone.
-                                                {{ $course->id }} / {{ $course->name }}
+                                                <div>
+                                                    <span>You are about to delete <span class="font-weight-bold"> {{ $course->id }} / {{ $course->name }}</span>.</span>
+                                                </div>
+                                                <span>Do you really want to delete this record? This process cannot be undone.</span>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -63,54 +63,54 @@ class CourseSeeder extends Seeder
             [
                 'name' => 'web2_scriptClients',
                 'classroom_id' => 102,
-                'section_id' => 1,
+                'section_id' => 2,
             ],
             [
                 'name' => 'web2_webDynamique',
                 'classroom_id' => 103,
-                'section_id' => 1,
+                'section_id' => 2,
             ],
             [
                 'name' => 'web2_frameworkPOO',
                 'classroom_id' => 104,
-                'section_id' => 1,
+                'section_id' => 2,
             ],
             [
                 'name' => 'web2_aprocheDesign',
                 'classroom_id' => 104,
-                'section_id' => 1,
+                'section_id' => 2,
             ],
             [
                 'name' => 'web2_anglaisUE2',
                 'classroom_id' => 101,
-                'section_id' => 1,
+                'section_id' => 2,
             ],
             // BACHELIER INFORMATIQUE DE GESTION BLOC 1
             [
                 'name' => 'binfo1_anglaisUE1',
                 'classroom_id' => 101,
-                'section_id' => 2,
+                'section_id' => 3,
             ],
             [
                 'name' => 'binfo1_algorithm_programation',
-                'classroom_id' => 101,
-                'section_id' => 2,
+                'classroom_id' => 103,
+                'section_id' => 3,
             ],
             [
                 'name' => 'binfo1_webPrincipesDeBase',
                 'classroom_id' => 101,
-                'section_id' => 2,
+                'section_id' => 3,
             ],
             [
                 'name' => 'binfo1_technGestProjet',
                 'classroom_id' => 101,
-                'section_id' => 2,
+                'section_id' => 3,
             ],
             [
                 'name' => 'binfo1_principAnalyseInfo',
-                'classroom_id' => 101,
-                'section_id' => 2,
-            ],
+                'classroom_id' => 102,
+                'section_id' => 3,
+            ]
         ]);
     }
 }

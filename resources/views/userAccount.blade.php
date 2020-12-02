@@ -16,7 +16,25 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label for="basic-url">Votre nom est :</label>
+                                    <label for="basic-url">Registered since :</label>
+                                    <span class="input-group-text" id="basic-addon3">
+                                        {{-- CHECK ROLE --}}
+                                        @if (Auth::user()->created_at)
+                                            {{ ucfirst(Auth::user()->created_at) }}
+                                        @else
+                                            <span class="text-danger" id="basic-addon3">
+                                                <i>No data</i>
+                                            </span>
+                                        @endif
+
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="basic-url">My name :</label>
                                     <span class="input-group-text" id="basic-addon3">
                                         {{ Auth::user()->name }}
                                     </span>
@@ -25,7 +43,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="basic-url">Votre email est :</label>
+                                    <label for="basic-url">My email :</label>
                                     <span class="input-group-text" id="basic-addon3">
                                         {{ Auth::user()->email }}
                                     </span>
@@ -33,7 +51,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="basic-url">Votre role est :</label>
+                                    <label for="basic-url">My role is :</label>
 
                                     <span class="input-group-text" id="basic-addon3">
                                         {{-- CHECK ROLE FOR ICON --}}
