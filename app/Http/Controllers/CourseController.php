@@ -122,16 +122,4 @@ class CourseController extends Controller
 
         return redirect('/courses')->with('success', 'The course {{ $course }} has been deleted successfully');
     }
-
-    public function getCoursesAgainstSection(Request $request)
-    {
-        try{
-            $courses = Course::where('section_id',$request->section_id)->get();
-            return $courses;
-        }
-        catch(\Exception $e){
-            // do task when error
-            echo $e->getMessage();
-        }
-    }
 }
