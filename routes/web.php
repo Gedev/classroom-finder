@@ -39,11 +39,12 @@ Route::middleware('roleVerification')->group(function () {
     Route::resource('adminPanel/sections', 'SectionController');
     Route::resource('adminPanel/categories', 'CategoryController');
     Route::get('send-mail','MailSend@mailsend');
+	Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
+		->name('permissions');
     Route::post('user/course/store','UserController@user_course_store')->name('user.course.store');
     Route::get('user/course/create','UserController@user_course_create')
     ->name('user.course.create');
-    Route::get('adminPanel/permissions', 'HomeController@adminPanelPermissions')
-        ->name('permissions');
+
 
     Route::post('section/courses','CourseController@getCoursesAgainstSection')->name('courses.against.schedule');
 });
