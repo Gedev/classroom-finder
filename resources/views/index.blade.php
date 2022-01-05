@@ -48,7 +48,7 @@
                                 @switch($j)
                                     @case(2)
                                         @if( array_key_exists($j, $schedule[0]["webdev_2"]))
-                                            <td class="schedule-table-td-filled bg-success td-border-round">{{ "ScriptClients" }}</td>
+                                            <td class="schedule-table-td-filled bg-success td-border-round"><span>{{ "ScriptClients" }}</span></td>
                                         @endif
                                         @break
                                     @case(3)
