@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -20,6 +21,8 @@ class UsersTableSeeder extends Seeder
                 'role' => '',
                 'card_id' => '',
                 'section_id' => rand(0, 6),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => 'Student',
@@ -28,6 +31,8 @@ class UsersTableSeeder extends Seeder
                 'role' => 'student',
                 'card_id' => '',
                 'section_id' => rand(0, 6),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => 'Professor',
@@ -36,6 +41,8 @@ class UsersTableSeeder extends Seeder
                 'role' => 'professor',
                 'card_id' => 'àé§è&§"§éç',
                 'section_id' => rand(0, 6),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => 'Director',
@@ -44,6 +51,8 @@ class UsersTableSeeder extends Seeder
                 'role' => 'director',
                 'card_id' => '',
                 'section_id' => 0,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]
         ]);
 
@@ -58,6 +67,8 @@ class UsersTableSeeder extends Seeder
                     'role' => 'student',
                     'card_id' => '',
                     'section_id' => rand(0, 7),
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ]
             ]);
         }

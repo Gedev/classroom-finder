@@ -8,7 +8,7 @@ html {
     box-shadow: 7px 7px 5px #343a4040 !important;
     padding: 2%;
     min-height: 80vh;
-    min-width: 75%;
+    min-width: 80%;
     max-width: 100vh;
 }
 
@@ -34,7 +34,7 @@ img .role_icons {
 
 .first-letter-title {
     display: inline;
-    color: #ff7802;
+    color: #BF365A;
     font-size: 2.9em;
     background-color: white;
     text-align: center;
@@ -44,8 +44,12 @@ img .role_icons {
     display: inline;
     font-size: 2.0em;
     color: #ffffff;
-    background-color: #ff7802;
+    background-color: #BF365A;
     text-align: center;
+}
+
+.adminPanel-card {
+    background-color: #fafefa;
 }
 
 .adminPanel-card-title {
@@ -53,7 +57,7 @@ img .role_icons {
 }
 
 .bg-orange {
-    background-color: #f3b333;
+    background-color: #f3ce78;
 }
 
 .bg-pink {
@@ -103,7 +107,7 @@ img .role_icons {
     text: bold;
 }
 
-#confirmAttendanceButton, #courseFormSelect, #confirmBeforeShowInput {
+#confirmAttendanceButton, #courseFormSelect, #confirmBeforeShowInput, #sectionFormSelect {
     display: none;
 }
 
@@ -117,17 +121,22 @@ img .role_icons {
 }
 
 .td-border-round {
+    border-radius: 20px;
     border: 3px;
+    width: 5%;
+}
+
+.schedule-table th {
+    width: 5%;
+    text-align: center;
 }
 
 .schedule-table-td-filled {
-    border-radius: 20px;
     transition: transform .2s;
     cursor: pointer;
+    padding-top: 20px !important;
     vertical-align: center !important;
 
-    background-clip: content-box;
-    vertical-align: center;
 }
 
 .schedule-table-td-filled:hover {
@@ -135,6 +144,115 @@ img .role_icons {
     transform: scale(1.1);
 }
 
-.schedule-table-td-filled span {
-    
+.adminPanel_role_icons {
+    color: red;
 }
+
+.blob {
+    background: black;
+    border-radius: 50%;
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.blob.red {
+    background: rgba(255, 82, 82, 1);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+}
+
+#annoucementMessage {
+    height: 100px;
+}
+
+.card {
+    margin-bottom: 5px;
+}
+.card-body {
+    min-height: 50px; !important;
+    margin: 10px !important;
+}
+
+#deleteButtonAnnouncement {
+    color: red;
+}
+
+.courses-container{
+    border: 1px solid #DCDCDC;
+    padding: 0px;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+    height:150
+}
+
+.courses-checkbox-list{
+    padding: 0px !important;
+    height:150px;
+    overflow:auto;
+}
+.courses-checkbox-list > li
+{
+    list-style-type: none;
+    padding: 7px 0px 7px 35px;
+    overflow: hidden;
+}
+
+.courses-checkbox-list > li:not(:last-child)
+{
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.courses-checkbox-list > li:last-child
+{
+    padding-bottom: 0px;
+}
+
+.courses-checkbox-label{
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.form-check-input{
+    position: relative;
+}
+

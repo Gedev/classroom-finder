@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCoursesUsersTable extends Migration
+class AddCourseForeignKeysToSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateCoursesUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('courses_users', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('course_id');
+        Schema::table('schedules', function (Blueprint $table) {
+            $table->unsignedBigInteger('course_id')->index()->nullable();
             $table->foreign('course_id')->references('id')->on('courses');
         });
     }
@@ -28,6 +26,10 @@ class CreateCoursesUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses_users');
+        Schema::table('schedules', function (Blueprint $table) {
+            $table->dropForeign('schedules_course_id_foreign');
+            $table->dropIndex('schedules_course_id_index');
+            $table->dropColumn('course_id');
+        });
     }
 }

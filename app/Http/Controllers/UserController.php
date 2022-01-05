@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Course;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Facades\Validator;
+use App\CourseUser;
+use App\Section;
 
 class UserController extends Controller
 {
@@ -159,6 +163,31 @@ class UserController extends Controller
         return view('users.index', [
             'users' => $users
         ]);
+    }
+
+    public function user_course_create($user_id = null)
+    {
+        $sections = Section::all();
+        return view('users.courses.create',compact('sections', 'user_id'));
+    }
+
+    public function user_course_store(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'courses' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return response($validator->messages(), 422);
+        }
+        $user_id = $request->user_id;
+        $courses = $request->courses;
+        $user = User::where('id',$user_id)->first();
+        $user->courses()->sync($courses);
+
+        return response(["message"=> "You have added the courses successfully."], 201);
+
     }
 }
 

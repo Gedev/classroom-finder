@@ -25,4 +25,15 @@ class Course extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
+
 }

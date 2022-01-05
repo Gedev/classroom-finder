@@ -14,8 +14,10 @@ class CreateSectionsUsersTable extends Migration
     public function up()
     {
         Schema::create('sections_users', function (Blueprint $table) {
-            $table->integer('user_id')->references('id')->on('users');
-            $table->integer('section_id')->references('id')->on('sections');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('section_id');
+            $table->foreign('section_id')->references('id')->on('sections');
         });
     }
 

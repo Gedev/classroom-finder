@@ -25,6 +25,30 @@ class CategorySeeder extends Seeder
                 'id' => '3',
                 'name' => 'Langues',
             ],
+            [
+                'id' => '4',
+                'name' => 'Développement Personnel',
+            ],
+            [
+                'id' => '5',
+                'name' => 'Orientation paramédicale',
+            ],
+            [
+                'id' => '6',
+                'name' => 'Section animalière',
+            ],
+            [
+                'id' => '7',
+                'name' => 'Section technique',
+            ],
+            [
+                'id' => '8',
+                'name' => 'Technique artisanat',
+            ],
+            [
+                'id' => '9',
+                'name' => 'Aide à la réussite',
+            ],
         ]);
     }
 }
